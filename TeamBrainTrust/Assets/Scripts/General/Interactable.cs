@@ -7,24 +7,33 @@ namespace General
     public class Interactable : MonoBehaviour
     {
         private bool isPlayerInReach;
-        public UnityEvent onInteraction;
+        private GameObject player;
+        public UnityEvent<GameObject>onInteraction;
 
         private void Update()
         {
-            if (isPlayerInReach && Input.GetButton("Interact"))
+            if (isPlayerInReach && Input.GetButtonDown("Interact"))
             {
-                
+                onInteraction.Invoke(player);
+                Debug.Log("Interaction.");
             }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            isPlayerInReach = true;
+            if (other.gameObject.layer==LayerMask.GetMask("Player"))
+            {
+                isPlayerInReach = true;
+                player = other.gameObject;
+            }
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            isPlayerInReach = false;
+            if (other.gameObject.layer==LayerMask.GetMask("Player"))
+            {
+                isPlayerInReach = false;
+            }
         }
     }
 }
