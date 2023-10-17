@@ -17,37 +17,61 @@ namespace Vehicle
         
         private void Update()
         {
-            //Press forward button to begin accelerating
-            if (Input.GetButton("Vertical"))
+            
+            SetCurrentSpeed();
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, currentSpeed);
+            
+        }
+        
+        private void SetCurrentSpeed()
+        {
+            if (Input.GetButton("Break"))
             {
-                if (Input.GetAxis("Vertical") > 0)
+                Break();
+            }
+            else if (Input.GetButton("Vertical"))
+            {
+                
+                if(Input.GetAxisRaw("Vertical") > 0)//Press Up button to begin accelerating
                 {
                     if (currentSpeed <= maxSpeed)
                     {
                         currentSpeed += acceleration * Time.deltaTime;
                     }
                 }
-
-                if (Input.GetAxis("Vertical") < 0)
+                else if(Input.GetAxisRaw("Vertical") < 0) //Press Down button to begin reversing
                 {
                     if (currentSpeed > maxReverseSpeed)
                     {
                         currentSpeed -= acceleration * Time.deltaTime;
                     }
                 }
-            }
-            else
-            {
-                if (currentSpeed != 0)
+                else //If pressing both Up & Down, car breaks
                 {
-                    currentSpeed = Mathf.Lerp(currentSpeed, 0, breakPower);
-                    
+                    Break();
                 }
             }
-
-
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, currentSpeed);
+            else //If no input, slow down
+            {
+                Break();
+            }
             
         }
+
+
+        void Break()
+        {
+            if (currentSpeed != 0)
+            {
+                currentSpeed = Mathf.Lerp(currentSpeed, 0, breakPower);
+            }
+        }
+        
+        
+        
     }
+
+
+
+   
 }
