@@ -8,10 +8,13 @@ namespace Vehicle
     {
         public int durability;
         
+        
         public float maxSpeed;
         public float maxReverseSpeed;
         public float acceleration;
         public float breakPower;
+
+        public float turnSpeed;
         
         private float currentSpeed;
         
@@ -19,7 +22,9 @@ namespace Vehicle
         {
             
             SetCurrentSpeed();
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, currentSpeed);
+            Turn();
+            
+            transform.Translate(0,  currentSpeed * Time.deltaTime, 0,Space.Self);
             
         }
         
@@ -56,6 +61,14 @@ namespace Vehicle
                 Break();
             }
             
+        }
+
+        void Turn()
+        {
+            if (Input.GetButton("Horizontal"))
+            {
+                transform.Rotate(0, 0, -Input.GetAxisRaw("Horizontal") * turnSpeed * Time.deltaTime);
+            }
         }
 
 

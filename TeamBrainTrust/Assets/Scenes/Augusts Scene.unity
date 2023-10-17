@@ -237,6 +237,7 @@ MonoBehaviour:
   maxReverseSpeed: -5
   acceleration: 4
   breakPower: 0.002
+  turnSpeed: 90
 --- !u!1001 &1127294796
 PrefabInstance:
   m_ObjectHideFlags: 0
