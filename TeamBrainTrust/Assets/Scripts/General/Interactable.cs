@@ -8,7 +8,15 @@ namespace General
     {
         private bool isPlayerInReach;
         public UnityEvent onInteraction;
-        
+
+        private void Update()
+        {
+            if (isPlayerInReach && Input.GetButton("Interact"))
+            {
+                
+            }
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             isPlayerInReach = true;
