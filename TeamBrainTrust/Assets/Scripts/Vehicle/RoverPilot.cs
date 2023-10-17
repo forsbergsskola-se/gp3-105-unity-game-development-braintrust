@@ -7,16 +7,18 @@ namespace Vehicle
 {
     public class RoverPilot : MonoBehaviour
     {
-        private bool isPlayerInRover;
+        public bool isPlayerInRover;
 
         private void Start()
         {
             GetComponent<Interactable>().onInteraction.AddListener(OnPlayerInteraction);
         }
 
-        private void OnPlayerInteraction()
+        public void OnPlayerInteraction(GameObject player)
         {
-            
+            Destroy(player);
+            isPlayerInRover = true;
+            Debug.Log("Hej o hå");
         }
     }
 }

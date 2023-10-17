@@ -8,7 +8,7 @@ namespace General
     {
         private bool isPlayerInReach;
         private GameObject player;
-        public UnityEvent<GameObject>onInteraction;
+        public UnityEvent<GameObject> onInteraction = new UnityEvent<GameObject>();
 
         private void Update()
         {
@@ -20,8 +20,8 @@ namespace General
         }
 
         private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.layer==LayerMask.GetMask("Player"))
+        {   Debug.Log(LayerMask.NameToLayer("Player"));
+            if (other.gameObject.layer==LayerMask.NameToLayer("Player"))
             {
                 isPlayerInReach = true;
                 player = other.gameObject;

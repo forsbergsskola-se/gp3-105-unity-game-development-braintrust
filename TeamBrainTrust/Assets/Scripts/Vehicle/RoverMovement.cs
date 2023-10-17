@@ -19,12 +19,13 @@ namespace Vehicle
         
         private void Update()
         {
+            if (GetComponent<RoverPilot>().isPlayerInRover)
+            {
+                SetCurrentSpeed();
+                Turn();
             
-            SetCurrentSpeed();
-            Turn();
-            
-            transform.Translate(0,  currentSpeed * Time.deltaTime, 0,Space.Self);
-            
+                transform.Translate(0,  currentSpeed * Time.deltaTime, 0,Space.Self);
+            }
         }
         
         private void SetCurrentSpeed()
