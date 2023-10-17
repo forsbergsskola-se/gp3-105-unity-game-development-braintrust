@@ -8,7 +8,6 @@ namespace Vehicle
     {
         public int durability;
         
-        
         public float maxSpeed;
         public float maxReverseSpeed;
         public float acceleration;
