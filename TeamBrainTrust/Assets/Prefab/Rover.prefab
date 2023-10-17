@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1546751393867627874}
   - component: {fileID: 4578787237392797370}
   - component: {fileID: 6491720872576730754}
+  - component: {fileID: 5303955797059676864}
   m_Layer: 0
   m_Name: Rover
   m_TagString: Untagged
@@ -177,3 +178,18 @@ MonoBehaviour:
   acceleration: 4
   breakPower: 0.002
   turnSpeed: 90
+--- !u!114 &5303955797059676864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579213911671191929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbab477549c94a24ab18e42639638d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls: []
