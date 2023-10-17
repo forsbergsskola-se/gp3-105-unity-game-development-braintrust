@@ -18,7 +18,6 @@ namespace Vehicle
         {
             Destroy(player);
             isPlayerInRover = true;
-            Debug.Log("Hej o hå");
         }
     }
 }

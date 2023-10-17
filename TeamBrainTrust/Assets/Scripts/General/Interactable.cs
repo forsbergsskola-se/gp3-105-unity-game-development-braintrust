@@ -15,12 +15,11 @@ namespace General
             if (isPlayerInReach && Input.GetButtonDown("Interact"))
             {
                 onInteraction.Invoke(player);
-                Debug.Log("Interaction.");
             }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
-        {   Debug.Log(LayerMask.NameToLayer("Player"));
+        {
             if (other.gameObject.layer==LayerMask.NameToLayer("Player"))
             {
                 isPlayerInReach = true;
