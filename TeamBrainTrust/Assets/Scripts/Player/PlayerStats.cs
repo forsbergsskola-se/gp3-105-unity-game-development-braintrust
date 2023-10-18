@@ -5,14 +5,20 @@ namespace Player
 {
     public class PlayerStats : MonoBehaviour
     {
-        public int maxHealth;
-        private int currentHealth;
+        [SerializeField] private int maxHealth;
+        [HideInInspector]public int currentHealth;
 
         private void Start()
         {
             currentHealth = maxHealth;
         }
 
+        [ContextMenu("Take Damage")]
+        public void TestTakeDamage()
+        {
+            TakeDamage(1);
+        }
+        
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
