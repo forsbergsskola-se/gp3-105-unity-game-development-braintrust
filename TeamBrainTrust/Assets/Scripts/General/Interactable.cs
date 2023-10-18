@@ -6,8 +6,8 @@ namespace General
 {
     public class Interactable : MonoBehaviour
     {
+        public bool isPlayerActive = true;
         private bool isPlayerInReach;
-        private bool isPlayerActive = true;
         private GameObject player;
         public UnityEvent<GameObject> onInteraction = new UnityEvent<GameObject>();
 
