@@ -27,7 +27,7 @@ namespace Vehicle
 
         public void OnPlayerInteraction(GameObject player)
         {
-            Destroy(player);
+            player.SetActive(false);
             isPlayerInRover = true;
         }
     }

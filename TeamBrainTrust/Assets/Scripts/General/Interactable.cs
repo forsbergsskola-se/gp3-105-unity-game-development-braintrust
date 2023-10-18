@@ -38,6 +38,7 @@ namespace General
             if (other.gameObject.layer==LayerMask.NameToLayer("Player"))
             {
                 isPlayerInReach = false;
+                player.SetActive(true);
             }
         }
     }
