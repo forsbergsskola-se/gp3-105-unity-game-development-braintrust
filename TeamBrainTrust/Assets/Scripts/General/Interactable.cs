@@ -11,10 +11,16 @@ namespace General
         public UnityEvent<GameObject> onInteraction = new UnityEvent<GameObject>();
 
         private void Update()
-        {
+        {   Debug.Log(isPlayerInReach);
+            if (player == null)
+            {
+                isPlayerInReach = false;
+            }
+            
             if (isPlayerInReach && Input.GetButtonDown("Interact"))
             {
                 onInteraction.Invoke(player);
+                
             }
         }
 
@@ -29,7 +35,7 @@ namespace General
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.gameObject.layer==LayerMask.GetMask("Player"))
+            if (other.gameObject.layer==LayerMask.NameToLayer("Player"))
             {
                 isPlayerInReach = false;
             }

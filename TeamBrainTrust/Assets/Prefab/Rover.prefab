@@ -243,3 +243,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerInRover: 0
+  player: {fileID: 1528170257981929722, guid: 876744d094f780c46a1ca36cf3db41a6, type: 3}

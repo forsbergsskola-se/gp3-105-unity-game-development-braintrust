@@ -12,7 +12,6 @@ namespace Vehicle
         public float maxReverseSpeed;
         public float acceleration;
         public float breakPower;
-
         public float turnSpeed;
         
         private float currentSpeed;
