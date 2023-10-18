@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5057606180303126857}
   - component: {fileID: 3281491985249846343}
   m_Layer: 3
-  m_Name: Space Guy
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
