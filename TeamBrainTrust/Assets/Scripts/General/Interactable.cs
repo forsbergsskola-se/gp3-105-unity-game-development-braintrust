@@ -7,17 +7,18 @@ namespace General
     public class Interactable : MonoBehaviour
     {
         private bool isPlayerInReach;
+        private bool isPlayerActive = true;
         private GameObject player;
         public UnityEvent<GameObject> onInteraction = new UnityEvent<GameObject>();
 
         private void Update()
         {   
-            if (!player.activeSelf)
+            if (!isPlayerActive)
             {
                 isPlayerInReach = false;
             }
             
-            if (isPlayerInReach && Input.GetButtonDown("Interact"))
+            if (isPlayerInReach && isPlayerActive && Input.GetButtonDown("Interact"))
             {
                 onInteraction.Invoke(player);
             }
@@ -37,7 +38,7 @@ namespace General
             if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 isPlayerInReach = false;
-                player.SetActive(true);
+                isPlayerActive = true;
             }
         }
     }
