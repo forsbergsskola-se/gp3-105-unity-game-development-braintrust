@@ -6,15 +6,16 @@ using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
-    public GameObject player;
     
-    private void Start()
+    private void FixedUpdate()
     {
-        if (player.activeSelf)
+        GameObject player = GameObject.Find("Space Guy");
+        if (player == null)
         {
-            Vector3 target = player.transform.position + new Vector3(0, 0, -7.5f);
-            transform.position = target;
+            return;
         }
+        Vector3 target = player.transform.position + new Vector3(0, 0, -7.5f);
+        transform.position = target;
     }
     
 }
