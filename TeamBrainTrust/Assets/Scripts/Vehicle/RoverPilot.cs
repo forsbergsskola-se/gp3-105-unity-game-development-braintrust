@@ -21,7 +21,8 @@ namespace Vehicle
             if (isPlayerInRover && Input.GetButtonDown("Interact"))
             {
                 isPlayerInRover = false;
-                Instantiate(player, transform.position + new Vector3(1, 0 ,0), quaternion.identity);
+                player.SetActive(true);
+                player.transform.position = transform.position + new Vector3(1, 0, 0);
             }
         }
 
@@ -29,6 +30,7 @@ namespace Vehicle
         {
             player.SetActive(false);
             isPlayerInRover = true;
+            this.player = player;
         }
     }
 }

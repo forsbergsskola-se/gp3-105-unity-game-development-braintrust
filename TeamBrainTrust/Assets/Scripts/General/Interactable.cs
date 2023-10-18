@@ -12,7 +12,7 @@ namespace General
 
         private void Update()
         {   Debug.Log(isPlayerInReach);
-            if (player == null)
+            if (!player.activeSelf)
             {
                 isPlayerInReach = false;
             }
@@ -39,6 +39,8 @@ namespace General
             {
                 isPlayerInReach = false;
                 player.SetActive(true);
+                
+
             }
         }
     }
