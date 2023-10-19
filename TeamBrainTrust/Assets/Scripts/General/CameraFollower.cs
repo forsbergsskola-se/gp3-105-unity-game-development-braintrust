@@ -1,11 +1,10 @@
 using Player;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CameraFollower : MonoBehaviour
 {
     private GameObject target;
-    [FormerlySerializedAs("delay")] public float maxDistance = 0.5f;
+    public float maxDistance = 0.5f;
 
     private void Start()
     {

@@ -80,12 +80,5 @@ namespace Vehicle
                 currentSpeed = Mathf.Lerp(currentSpeed, 0, power * Time.deltaTime);
             }
         }
-        
-        
-        
     }
-
-
-
-   
 }

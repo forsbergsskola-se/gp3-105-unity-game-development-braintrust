@@ -11,7 +11,6 @@ namespace Player
         private void Update()
         { 
             transform.Translate(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime,Input.GetAxisRaw("Vertical") * speed * Time.deltaTime ,0);
-            
         }
     }
     
