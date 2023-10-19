@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Vector2 = System.Numerics.Vector2;
 
 namespace Vehicle
 {
@@ -24,6 +25,10 @@ namespace Vehicle
                 Turn();
             
             }
+            else
+            {
+                Break(breakPower);
+            }
         }
         
         
@@ -45,9 +50,14 @@ namespace Vehicle
             {
                 Break(deceleration);
             }
-            else if (currentSpeed <= maxSpeed)
+            else if (yInput > 0 && currentSpeed <= maxSpeed)
             {
                 currentSpeed += acceleration * Time.deltaTime;
+                isBreaking = false;
+            }
+            else if (yInput < 0 && currentSpeed <= maxSpeed)
+            {
+                currentSpeed -= acceleration * Time.deltaTime;
                 isBreaking = false;
             }
         }

@@ -8,6 +8,7 @@ namespace General
     {
         private GameObject target;
         public float maxDistance = 0.5f;
+        public float targetOffset;
         private float targetSpeed;
 
         private void FixedUpdate()
@@ -24,9 +25,13 @@ namespace General
         private void FollowTarget()
         {
             Vector3 targetPosition = target.transform.position + new Vector3(0, 0, -7.5f);
-            //transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * targetSpeed / maxDistance);
+            Vector3 offset = target.GetComponent<Rigidbody2D>().velocity.normalized * targetOffset;
+            
+            Debug.Log(offset);
+            targetPosition += offset;
+            
             transform.position = Vector3.Lerp(transform.position, targetPosition,
-                Time.deltaTime * (targetSpeed / maxDistance));
+                Time.deltaTime * maxDistance);
         }
 
     }
