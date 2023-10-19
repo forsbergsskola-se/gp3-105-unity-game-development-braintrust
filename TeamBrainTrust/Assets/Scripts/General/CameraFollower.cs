@@ -1,15 +1,17 @@
 using System;
 using Player;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace General
 {
     public class CameraFollower : MonoBehaviour
     {
         private GameObject target;
-        public float maxDistance = 0.5f;
-        public float targetOffset;
+        public float targetOffset = 2.5f;
+        public float delayAmount = 50f;
         private float targetSpeed;
+        
 
         private void FixedUpdate()
         {
@@ -24,14 +26,24 @@ namespace General
 
         private void FollowTarget()
         {
-            Vector3 targetPosition = target.transform.position + new Vector3(0, 0, -7.5f);
-            Vector3 offset = target.GetComponent<Rigidbody2D>().velocity.normalized * targetOffset;
+            if(target == null)
+                return;
             
-            Debug.Log(offset);
-            targetPosition += offset;
+            Vector3 targetPosition = target.transform.position + new Vector3(0, 0, -7.5f);
+            
+            targetPosition += GetOffset();
             
             transform.position = Vector3.Lerp(transform.position, targetPosition,
-                Time.deltaTime * maxDistance);
+                targetSpeed / delayAmount);
+            
+        }
+
+        Vector3 GetOffset()
+        {
+            Rigidbody2D targetRB = target.GetComponent<Rigidbody2D>();
+            float offsetAmount = targetRB.velocity.magnitude / targetSpeed;
+            
+            return targetRB.velocity.normalized * offsetAmount * targetOffset;
         }
 
     }
