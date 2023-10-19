@@ -55,7 +55,7 @@ namespace Vehicle
                 currentSpeed += acceleration * Time.deltaTime;
                 isBreaking = false;
             }
-            else if (yInput < 0 && currentSpeed <= maxSpeed)
+            else if (yInput < 0 && currentSpeed >= -maxSpeed)
             {
                 currentSpeed -= acceleration * Time.deltaTime;
                 isBreaking = false;
