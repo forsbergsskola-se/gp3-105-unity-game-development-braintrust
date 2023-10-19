@@ -27,8 +27,8 @@ namespace Player
         { 
            // transform.Translate(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime,Input.GetAxisRaw("Vertical") * speed * Time.deltaTime ,0);
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2( xInput * speed * Time.deltaTime,
-                 yInput * speed * Time.deltaTime);
+            rb.velocity = new Vector2( xInput * speed,
+                 yInput * speed);
         }
     }
     

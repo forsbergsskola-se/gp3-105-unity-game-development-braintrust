@@ -14,7 +14,7 @@ namespace Vehicle
         public float deceleration;
         public float breakPower;
         public float turnSpeed;
-        
+        private float yInput;
         private float currentSpeed;
         
         private void Update()
@@ -27,7 +27,12 @@ namespace Vehicle
                 transform.Translate(0,  currentSpeed * Time.deltaTime, 0,Space.Self);
             }
         }
-        
+
+        private void FixedUpdate()
+        {
+            RoverVerticalMovement();
+        }
+
         private void SetCurrentSpeed()
         {
             if (Input.GetButton("Break"))
@@ -38,7 +43,7 @@ namespace Vehicle
             else if (Input.GetButton("Vertical"))
             {
                 
-                if(Input.GetAxisRaw("Vertical") > 0)//Press Up button to begin accelerating
+                if(Input.GetAxisRaw("Vertical") > 0)  //Press Up button to begin accelerating
                 {
                     if (currentSpeed <= maxSpeed)
                     {
@@ -62,6 +67,12 @@ namespace Vehicle
                 Break(deceleration);
             }
             
+        }
+
+        void RoverVerticalMovement()
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(rb.velocity.x, yInput * currentSpeed);
         }
 
         void Turn()
