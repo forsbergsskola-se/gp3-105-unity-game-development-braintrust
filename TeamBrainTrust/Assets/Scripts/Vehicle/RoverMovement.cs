@@ -16,12 +16,12 @@ namespace Vehicle
         public float turnSpeed;
         private float yInput;
         private float currentSpeed;
-        
+        private bool isBreaking;
         private void Update()
         {
             if (GetComponent<RoverPilot>().isPlayerInRover)
             {
-                SetCurrentSpeed();
+                DriveInput();
                 Turn();
             
                 transform.Translate(0,  currentSpeed * Time.deltaTime, 0,Space.Self);
@@ -33,44 +33,34 @@ namespace Vehicle
             RoverVerticalMovement();
         }
 
-        private void SetCurrentSpeed()
+        private void DriveInput()
         {
             if (Input.GetButton("Break"))
             {
-                
                 Break(breakPower);
+                return;
             }
-            else if (Input.GetButton("Vertical"))
-            {
-                
-                if(Input.GetAxisRaw("Vertical") > 0)  //Press Up button to begin accelerating
-                {
-                    if (currentSpeed <= maxSpeed)
-                    {
-                        currentSpeed += acceleration * Time.deltaTime;
-                    }
-                }
-                else if(Input.GetAxisRaw("Vertical") < 0) //Press Down button to begin reversing
-                {
-                    if (currentSpeed > maxReverseSpeed)
-                    {
-                        currentSpeed -= acceleration * Time.deltaTime;
-                    }
-                }
-                else //If pressing both Up & Down, car breaks
-                {
-                    Break(deceleration);
-                }
-            }
-            else //If no input, slow down
+
+            yInput = Input.GetAxisRaw("Vertical");
+            if (yInput == 0)
             {
                 Break(deceleration);
             }
-            
+            else
+            {
+                currentSpeed += acceleration + Time.deltaTime;
+                isBreaking = false;
+            }
         }
+
 
         void RoverVerticalMovement()
         {
+            if (isBreaking)
+            {
+                return;
+            }
+            
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(rb.velocity.x, yInput * currentSpeed);
         }
@@ -86,6 +76,8 @@ namespace Vehicle
 
         void Break(float power)
         {
+            isBreaking = true;
+            
             if (currentSpeed != 0)
             {
                 currentSpeed = Mathf.Lerp(currentSpeed, 0, power * Time.deltaTime);
