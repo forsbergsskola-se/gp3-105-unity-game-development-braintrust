@@ -9,7 +9,6 @@ namespace Vehicle
         public int durability;
         
         public float maxSpeed;
-        public float maxReverseSpeed;
         public float acceleration;
         public float deceleration;
         public float breakPower;
@@ -24,10 +23,10 @@ namespace Vehicle
                 DriveInput();
                 Turn();
             
-                transform.Translate(0,  currentSpeed * Time.deltaTime, 0,Space.Self);
             }
         }
-
+        
+        
         private void FixedUpdate()
         {
             RoverVerticalMovement();
@@ -46,9 +45,9 @@ namespace Vehicle
             {
                 Break(deceleration);
             }
-            else
+            else if (currentSpeed <= maxSpeed)
             {
-                currentSpeed += acceleration + Time.deltaTime;
+                currentSpeed += acceleration * Time.deltaTime;
                 isBreaking = false;
             }
         }
@@ -56,17 +55,14 @@ namespace Vehicle
 
         void RoverVerticalMovement()
         {
-            if (isBreaking)
-            {
-                return;
-            }
-            
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(rb.velocity.x, yInput * currentSpeed);
+            rb.velocity = currentSpeed * transform.up;
+            
         }
 
         void Turn()
         {
+            
             if (Input.GetButton("Horizontal"))
             {
                 transform.Rotate(0, 0, -Input.GetAxisRaw("Horizontal") * turnSpeed * Time.deltaTime);

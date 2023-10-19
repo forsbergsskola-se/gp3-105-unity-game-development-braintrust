@@ -176,7 +176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durability: 0
   maxSpeed: 6
-  maxReverseSpeed: -4
   acceleration: 4
   deceleration: 1
   breakPower: 5

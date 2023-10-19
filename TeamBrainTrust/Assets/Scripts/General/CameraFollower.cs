@@ -10,7 +10,7 @@ namespace General
         public float maxDistance = 0.5f;
         private float targetSpeed;
 
-        private void LateUpdate()
+        private void FixedUpdate()
         {
             FollowTarget();
         }
