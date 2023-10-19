@@ -11,6 +11,7 @@ namespace Vehicle
         public float maxSpeed;
         public float maxReverseSpeed;
         public float acceleration;
+        public float deceleration;
         public float breakPower;
         public float turnSpeed;
         
@@ -31,7 +32,8 @@ namespace Vehicle
         {
             if (Input.GetButton("Break"))
             {
-                Break();
+                Debug.Log(currentSpeed);
+                Break(breakPower);
             }
             else if (Input.GetButton("Vertical"))
             {
@@ -52,12 +54,12 @@ namespace Vehicle
                 }
                 else //If pressing both Up & Down, car breaks
                 {
-                    Break();
+                    Break(deceleration);
                 }
             }
             else //If no input, slow down
             {
-                Break();
+                Break(deceleration);
             }
             
         }
@@ -71,11 +73,11 @@ namespace Vehicle
         }
 
 
-        void Break()
+        void Break(float power)
         {
             if (currentSpeed != 0)
             {
-                currentSpeed = Mathf.Lerp(currentSpeed, 0, breakPower);
+                currentSpeed = Mathf.Lerp(currentSpeed, 0, power * Time.deltaTime);
             }
         }
         
