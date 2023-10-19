@@ -3,35 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using General;
+using Player;
 using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
     private void FixedUpdate()
     {
+        PlayerStats player = FindFirstObjectByType<PlayerStats>();;
         
-        // vi vill använda isPlayerActive från Interactable 
         
-        GameObject player = GameObject.Find("Player");
-        GameObject rover = GameObject.Find("Rover");
-        
-        if (player == null)
+        if (player.rover == null)
         {
-            return;
+            FollowTarget(player.gameObject);
         }
-/*
-        if ()
+        else
         {
-            Vector3 target = player.transform.position + new Vector3(0, 0, -7.5f);
-            transform.position = target;
+            FollowTarget(player.rover.gameObject);
         }
+    }
 
-        if (!)
-        {
-            Vector3 target = rover.transform.position + new Vector3(0, 0, -7.5f);
-            transform.position = target;
-        }
-        */
+    private void FollowTarget(GameObject target)
+    {
+        Vector3 targetPosition = target.transform.position + new Vector3(0, 0, -7.5f);
+        transform.position = targetPosition;
     }
     
 }

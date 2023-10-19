@@ -1,10 +1,12 @@
 ﻿using System;
 using UnityEngine;
+using Vehicle;
 
 namespace Player
 {
     public class PlayerStats : MonoBehaviour
     {
+        public RoverPilot rover;
         [SerializeField] private int maxHealth;
         [HideInInspector]public int currentHealth;
 
