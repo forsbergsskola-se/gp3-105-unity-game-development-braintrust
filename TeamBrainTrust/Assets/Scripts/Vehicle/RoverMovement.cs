@@ -32,7 +32,7 @@ namespace Vehicle
         {
             if (Input.GetButton("Break"))
             {
-                Debug.Log(currentSpeed);
+                
                 Break(breakPower);
             }
             else if (Input.GetButton("Vertical"))
