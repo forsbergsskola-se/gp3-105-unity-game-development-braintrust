@@ -9,7 +9,7 @@ namespace Vehicle
 {
     public class RoverPilot : MonoBehaviour
     {
-        private bool isPlayerInRover;
+        public bool isPlayerInRover;
         private GameObject player;
 
         private void Start()
@@ -28,6 +28,7 @@ namespace Vehicle
         public void OnPlayerInteraction(GameObject player)
         {
             player.GetComponent<PlayerStats>().rover = this;
+            FindFirstObjectByType<CameraFollower>().SetTarget(gameObject);
             player.SetActive(false);
             isPlayerInRover = true;
             this.player = player;
@@ -36,6 +37,7 @@ namespace Vehicle
         private void ExitRover()
         {
             player.GetComponent<PlayerStats>().rover = null;
+            FindFirstObjectByType<CameraFollower>().SetTarget(player.gameObject);
             isPlayerInRover = false;
             player.SetActive(true);
             player.transform.position = transform.position + new Vector3(1, 0, 0);

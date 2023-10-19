@@ -8,22 +8,25 @@ using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
-    private void FixedUpdate()
+    private GameObject target;
+
+    private void Start()
     {
-        PlayerStats player = FindFirstObjectByType<PlayerStats>();;
-        
-        
-        if (player.rover == null)
-        {
-            FollowTarget(player.gameObject);
-        }
-        else
-        {
-            FollowTarget(player.rover.gameObject);
-        }
+        PlayerStats player = FindFirstObjectByType<PlayerStats>();
+        target = player.gameObject;
     }
 
-    private void FollowTarget(GameObject target)
+    private void LateUpdate()
+    {
+        FollowTarget();
+    }
+
+    public void SetTarget(GameObject target)
+    {
+        this.target = target;
+    }
+    
+    private void FollowTarget()
     {
         Vector3 targetPosition = target.transform.position + new Vector3(0, 0, -7.5f);
         transform.position = targetPosition;

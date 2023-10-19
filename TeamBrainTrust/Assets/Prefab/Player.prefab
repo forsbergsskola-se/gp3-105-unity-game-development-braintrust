@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2445505167765213842}
   - component: {fileID: 5057606180303126857}
   - component: {fileID: 3281491985249846343}
+  - component: {fileID: 4182820658975885585}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -144,3 +145,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!114 &4182820658975885585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528170257981929722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c722a11687454f76aa8193cca5b43c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rover: {fileID: 0}
+  maxHealth: 1
+  currentHealth: 0
