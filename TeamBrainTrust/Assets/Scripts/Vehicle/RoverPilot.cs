@@ -27,8 +27,9 @@ namespace Vehicle
 
         public void OnPlayerInteraction(GameObject player)
         {
+            RoverMovement rm = GetComponent<RoverMovement>();
             player.GetComponent<PlayerStats>().rover = this;
-            FindFirstObjectByType<CameraFollower>().SetTarget(gameObject);
+            FindFirstObjectByType<CameraFollower>().SetTarget(gameObject, rm.maxSpeed);
             player.SetActive(false);
             isPlayerInRover = true;
             this.player = player;
@@ -36,8 +37,9 @@ namespace Vehicle
 
         private void ExitRover()
         {
+            PlayerMovement pm = player.GetComponent<PlayerMovement>();
             player.GetComponent<PlayerStats>().rover = null;
-            FindFirstObjectByType<CameraFollower>().SetTarget(player.gameObject);
+            FindFirstObjectByType<CameraFollower>().SetTarget(player.gameObject, pm.speed);
             isPlayerInRover = false;
             player.SetActive(true);
             player.transform.position = transform.position + new Vector3(1, 0, 0);
