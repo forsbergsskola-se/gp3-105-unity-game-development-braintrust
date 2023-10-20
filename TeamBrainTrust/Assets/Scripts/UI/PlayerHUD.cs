@@ -21,6 +21,7 @@ namespace UI
         {
             roverHealthBar.SetupUI(roverStats.maxHealth, roverStats.currentHealth);
             roverHUD.gameObject.SetActive(true);
+            Debug.Log(roverStats);
         }
 
         public void DisableRoverUI()

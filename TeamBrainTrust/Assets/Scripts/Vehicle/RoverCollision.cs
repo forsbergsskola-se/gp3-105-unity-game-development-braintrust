@@ -7,14 +7,11 @@ namespace Vehicle
     {
         private void OnCollisionEnter2D(Collision2D other)
         {
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            int damage = (int)GetComponent<RoverMovement>().currentSpeed;
+            damage = Mathf.Abs(damage);
             
-            int damage = (int)(10 * rb.velocity.magnitude);
             GetComponent<RoverStats>().TakeDamage(damage);
-
             GetComponent<RoverMovement>().currentSpeed = 0;
-
         }
-        
     }
 }
