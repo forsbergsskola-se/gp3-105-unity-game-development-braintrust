@@ -8,6 +8,8 @@ namespace Vehicle
 {
     public class RoverStats : Stats
     {
+        public int explosiveDamage;
+        
         [HideInInspector]public PlayerStats playerStats;
         
         public override void TakeDamage(int damage)
@@ -19,8 +21,9 @@ namespace Vehicle
         public override void Death()
         {
             base.Death();
-            
-            playerStats.TakeDamage(1);
+            playerStats.TakeDamage(explosiveDamage);
+            GetComponent<RoverPilot>().ExitRover();
+            Destroy(gameObject);
         }
     }
 }

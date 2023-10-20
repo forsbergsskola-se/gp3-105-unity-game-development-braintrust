@@ -39,7 +39,7 @@ namespace Vehicle
             FindFirstObjectByType<PlayerHUD>().SetupRoverUI(GetComponent<RoverStats>());
         }
 
-        private void ExitRover()
+        public void ExitRover()
         {
             PlayerMovement pm = player.GetComponent<PlayerMovement>();
             player.GetComponent<PlayerStats>().rover = null;
