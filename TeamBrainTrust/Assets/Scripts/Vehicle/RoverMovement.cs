@@ -7,15 +7,17 @@ namespace Vehicle
 {
     public class RoverMovement : MonoBehaviour
     {
-        public int durability;
-        
+        [Header("Speed")]
         public float maxSpeed;
+        public float turnSpeed;
+        
+        [Header("Acceleration")]
         public float acceleration;
         public float deceleration;
         public float breakPower;
-        public float turnSpeed;
+        
+        [HideInInspector]public float currentSpeed;
         private float yInput;
-        private float currentSpeed;
         private bool isBreaking;
         private void Update()
         {

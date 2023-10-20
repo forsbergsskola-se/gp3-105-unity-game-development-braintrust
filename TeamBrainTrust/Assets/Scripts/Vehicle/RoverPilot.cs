@@ -14,7 +14,7 @@ namespace Vehicle
 
         private void Start()
         {
-            GetComponent<Interactable>().onInteraction.AddListener(OnPlayerInteraction);
+            GetComponent<Interactable>().onInteraction.AddListener(EnterRover);
         }
 
         private void Update()
@@ -25,10 +25,12 @@ namespace Vehicle
             }
         }
 
-        public void OnPlayerInteraction(GameObject player)
+        public void EnterRover(GameObject player)
         {
             RoverMovement rm = GetComponent<RoverMovement>();
             player.GetComponent<PlayerStats>().rover = this;
+            GetComponent<RoverStats>().playerStats = player.GetComponent<PlayerStats>();
+            
             FindFirstObjectByType<CameraFollower>().SetTarget(gameObject, rm.maxSpeed);
             player.SetActive(false);
             isPlayerInRover = true;
