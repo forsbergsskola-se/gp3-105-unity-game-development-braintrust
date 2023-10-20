@@ -4,14 +4,18 @@ namespace General
 {
     public class Stats : MonoBehaviour
     {
-        [SerializeField] private int maxHealth;
+        public int maxHealth;
         [HideInInspector]public int currentHealth;
 
-        public virtual void Start()
+        public virtual void Awake()
         {
             currentHealth = maxHealth;
         }
-        
+        [ContextMenu("testdamage")]
+        public void testdamage()
+        {
+            TakeDamage(1);
+        }
         public virtual void TakeDamage(int damage)
         {
             currentHealth -= damage;
