@@ -1,6 +1,7 @@
 ﻿using System;
 using Player;
 using UnityEngine;
+using Vehicle;
 
 namespace UI
 {
@@ -13,6 +14,11 @@ namespace UI
         private void Start()
         {
             playerHealthBar.SetupUI(playerStats.maxHealth, playerStats.currentHealth);
+        }
+
+        public void SetupRoverUI(RoverStats roverStats)
+        {
+            roverHealthBar.SetupUI(roverStats.maxHealth, roverStats.currentHealth);
         }
     }
 }
