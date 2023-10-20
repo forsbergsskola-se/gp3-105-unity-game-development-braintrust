@@ -1,38 +1,17 @@
 ﻿using System;
+using General;
 using UnityEngine;
 using Vehicle;
 
 namespace Player
 {
-    public class PlayerStats : MonoBehaviour
+    public class PlayerStats : Stats
     {
         public RoverPilot rover;
-        [SerializeField] private int maxHealth;
-        [HideInInspector]public int currentHealth;
-
-        private void Start()
-        {
-            currentHealth = maxHealth;
-        }
-
-        [ContextMenu("Take Damage")]
-        public void TestTakeDamage()
-        {
-            TakeDamage(1);
-        }
         
-        public void TakeDamage(int damage)
+        public override void Death()
         {
-            currentHealth -= damage;
-            if(currentHealth <= 0)
-            {
-                Death();
-            }
-        }
-
-        private void Death()
-        {
-            gameObject.SetActive(false);
+            base.Death();
         }
     }
 }

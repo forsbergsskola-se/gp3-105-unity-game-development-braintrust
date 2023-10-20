@@ -12,10 +12,12 @@ GameObject:
   - component: {fileID: 3250467853638320225}
   - component: {fileID: -1546751393867627874}
   - component: {fileID: 4578787237392797370}
+  - component: {fileID: 2592846722485173981}
   - component: {fileID: 6491720872576730754}
   - component: {fileID: 5303955797059676864}
-  - component: {fileID: 2592846722485173981}
   - component: {fileID: 6935073296636286297}
+  - component: {fileID: 9086169235841065906}
+  - component: {fileID: 8973284335520174070}
   m_Layer: 0
   m_Name: Rover
   m_TagString: Untagged
@@ -116,7 +118,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4578787237392797370
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,40 +164,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55, y: 0.8}
   m_EdgeRadius: 0
---- !u!114 &6491720872576730754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579213911671191929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b96f038168b641a39129f96d5f7e7173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  durability: 0
-  maxSpeed: 6
-  acceleration: 4
-  deceleration: 1
-  breakPower: 5
-  turnSpeed: 90
---- !u!114 &5303955797059676864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579213911671191929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbab477549c94a24ab18e42639638d2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerActive: 1
-  onInteraction:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!58 &2592846722485173981
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -231,6 +199,39 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
+--- !u!114 &6491720872576730754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579213911671191929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96f038168b641a39129f96d5f7e7173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 6
+  turnSpeed: 90
+  acceleration: 4
+  deceleration: 1
+  breakPower: 5
+--- !u!114 &5303955797059676864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579213911671191929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbab477549c94a24ab18e42639638d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayerActive: 1
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6935073296636286297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,3 +245,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerInRover: 0
+--- !u!114 &9086169235841065906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579213911671191929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295cd95d13f34356b4a7fc4c9540eb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  playerStats: {fileID: 0}
+--- !u!114 &8973284335520174070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579213911671191929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec4dc6bd8f64037895b9476079b8d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
