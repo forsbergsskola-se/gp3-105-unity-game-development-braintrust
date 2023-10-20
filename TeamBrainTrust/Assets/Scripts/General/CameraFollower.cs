@@ -41,9 +41,9 @@ namespace General
         Vector3 GetOffset()
         {
             Rigidbody2D targetRB = target.GetComponent<Rigidbody2D>();
-            float offsetAmount = targetRB.velocity.magnitude / targetSpeed;
+            float offsetAlpha = targetRB.velocity.magnitude / targetSpeed;
             
-            return targetRB.velocity.normalized * offsetAmount * targetOffset;
+            return targetRB.velocity.normalized * offsetAlpha * targetOffset;
         }
 
     }
