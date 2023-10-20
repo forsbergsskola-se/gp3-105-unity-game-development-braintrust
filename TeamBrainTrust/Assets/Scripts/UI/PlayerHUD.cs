@@ -9,6 +9,7 @@ namespace UI
     {
         public HealthBar playerHealthBar;
         public HealthBar roverHealthBar;
+        public GameObject roverHUD;
         public PlayerStats playerStats;
 
         private void Start()
@@ -19,6 +20,12 @@ namespace UI
         public void SetupRoverUI(RoverStats roverStats)
         {
             roverHealthBar.SetupUI(roverStats.maxHealth, roverStats.currentHealth);
+            roverHUD.gameObject.SetActive(true);
+        }
+
+        public void DisableRoverUI()
+        {
+            roverHUD.gameObject.SetActive(false);
         }
     }
 }

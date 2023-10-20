@@ -1,6 +1,7 @@
 ﻿using System;
 using General;
 using Player;
+using UI;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -35,6 +36,7 @@ namespace Vehicle
             player.SetActive(false);
             isPlayerInRover = true;
             this.player = player;
+            FindFirstObjectByType<PlayerHUD>().SetupRoverUI(GetComponent<RoverStats>());
         }
 
         private void ExitRover()
@@ -45,6 +47,7 @@ namespace Vehicle
             isPlayerInRover = false;
             player.SetActive(true);
             player.transform.position = transform.position + new Vector3(1, 0, 0);
+            FindFirstObjectByType<PlayerHUD>().DisableRoverUI();
         }
     }
 }
