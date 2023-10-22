@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roover
       objectReference: {fileID: 0}
+    - target: {fileID: 3250467853638320225, guid: 689ef5291df981345978b4735350a1de, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e4483ffbe92bd5e4984e8645c7776388, type: 3}
     - target: {fileID: 5546743635862814619, guid: 689ef5291df981345978b4735350a1de, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.53787327
