@@ -8,9 +8,11 @@ namespace Compounds
     {
         public int crates;
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             FindFirstObjectByType<QuestManager>().EnterCompound();
+            
         }
+        
     }
 }
