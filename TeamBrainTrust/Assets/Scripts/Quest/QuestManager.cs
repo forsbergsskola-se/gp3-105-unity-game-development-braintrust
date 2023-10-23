@@ -9,6 +9,7 @@ namespace Quest
         public int cratesLoaded;
         public int cratesRequired;
         private int questCompleted;
+        public bool isObjectiveCompleted;
 
         public void GetNewQuest()
         {
@@ -31,7 +32,7 @@ namespace Quest
 
         public void ObjectiveCompleted()
         {
-            
+            isObjectiveCompleted = true;
         }
 
     }
