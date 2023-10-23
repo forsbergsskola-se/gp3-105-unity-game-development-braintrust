@@ -13,7 +13,7 @@ namespace UI
         public GameObject roverHUD;
         public PlayerStats playerStats;
         public TextMeshProUGUI currencyText;
-
+        public int currencyCount;
         private void Start()
         {
             playerHealthBar.SetupUI(playerStats.maxHealth, playerStats.currentHealth);
@@ -31,8 +31,9 @@ namespace UI
             roverHUD.gameObject.SetActive(false);
         }
         
-        public void UpdateCurrency(int currencyCount)
+        public void UpdateCurrency()
         {
+            currencyCount++;
             currencyText.text = currencyCount.ToString();
         }
     }
