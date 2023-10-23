@@ -30,11 +30,10 @@ namespace UI
         {
             roverHUD.gameObject.SetActive(false);
         }
-
-        [ContextMenu("UpdateCurrency")]
-        public void UpdateCurrency(int currency)
+        
+        public void UpdateCurrency(int currencyCount)
         {
-            currencyText.text = currency.ToString();
+            currencyText.text = currencyCount.ToString();
         }
     }
 }
