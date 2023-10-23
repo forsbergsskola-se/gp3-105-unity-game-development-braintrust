@@ -5,6 +5,7 @@ namespace Enemies
 {
     public class Tower : MonoBehaviour
     {
+        public GameObject projectilePrefab;
         public float range;
         public int damage;
         public float reloadTime;
@@ -23,7 +24,7 @@ namespace Enemies
 
         private void Shoot()
         {
-            
+            Instantiate(projectilePrefab);
         }
 
     }
