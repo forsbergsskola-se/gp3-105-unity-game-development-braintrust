@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b554ed57e349068aa6c5fffa5445b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyCount: 0
 --- !u!61 &585215567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -366,7 +365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b554ed57e349068aa6c5fffa5445b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyCount: 0
 --- !u!61 &658788113
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -510,7 +508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b554ed57e349068aa6c5fffa5445b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyCount: 0
 --- !u!61 &659362992
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -680,39 +677,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 689ef5291df981345978b4735350a1de, type: 3}
---- !u!1 &1302765575 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8226085587295729796, guid: 7403eb886c82564449664e4b52f7dcf0, type: 3}
-  m_PrefabInstance: {fileID: 1820295564}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1302765577 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8685479366818019494, guid: 7403eb886c82564449664e4b52f7dcf0, type: 3}
   m_PrefabInstance: {fileID: 1820295564}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302765575}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1302765579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302765575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39daac9faedc4c5ebdfcfbdbf0ca4107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealthBar: {fileID: 0}
-  roverHealthBar: {fileID: 0}
-  roverHUD: {fileID: 0}
-  playerStats: {fileID: 0}
-  currencyText: {fileID: 1302765577}
 --- !u!1001 &1746027168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -794,6 +769,10 @@ PrefabInstance:
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 598005914}
+    - target: {fileID: 3803653808811807216, guid: 7403eb886c82564449664e4b52f7dcf0, type: 3}
+      propertyPath: currencyText
+      value: 
+      objectReference: {fileID: 1302765577}
     - target: {fileID: 3803653808811807216, guid: 7403eb886c82564449664e4b52f7dcf0, type: 3}
       propertyPath: roverHealthBar
       value: 
@@ -902,9 +881,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8226085587295729796, guid: 7403eb886c82564449664e4b52f7dcf0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1302765579}
     - targetCorrespondingSourceObject: {fileID: 5753088807640457968, guid: 7403eb886c82564449664e4b52f7dcf0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1820295567}
