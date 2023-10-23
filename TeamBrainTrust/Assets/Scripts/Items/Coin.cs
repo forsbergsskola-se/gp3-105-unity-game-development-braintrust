@@ -14,6 +14,7 @@ namespace Items
             Destroy(other.gameObject);
             currency++;
             GetComponent<PlayerHUD>().UpdateCurrency(currency);
+            Debug.Log(currency);
         }
     }
 }
