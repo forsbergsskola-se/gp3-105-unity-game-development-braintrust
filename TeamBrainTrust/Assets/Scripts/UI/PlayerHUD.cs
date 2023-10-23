@@ -33,7 +33,7 @@ namespace UI
 
         public void UpdateCurrency(int currency)
         {
-            
+            currencyText = currency
         }
     }
 }
