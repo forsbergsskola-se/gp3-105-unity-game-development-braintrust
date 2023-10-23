@@ -8,6 +8,7 @@ namespace Player
 {
     public class PlayerStats : Stats
     {
+        public bool questActive;
         public RoverPilot rover;
         public override void TakeDamage(int damage)
         {
