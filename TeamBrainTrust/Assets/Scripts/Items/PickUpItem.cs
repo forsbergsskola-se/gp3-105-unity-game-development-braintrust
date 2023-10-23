@@ -14,6 +14,7 @@ namespace Items
         private void Pickup(GameObject player)
         {
             transform.parent = player.transform;
+            transform.localPosition = new Vector3(0, -0.35f, 0);
         }
     }
 }
