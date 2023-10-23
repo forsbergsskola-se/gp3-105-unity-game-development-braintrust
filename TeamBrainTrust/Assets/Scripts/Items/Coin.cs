@@ -7,13 +7,10 @@ namespace Items
 {
     public class Coin : MonoBehaviour
     {
-        public int currencyCount;
-        
         private void OnTriggerEnter2D(Collider2D other)
         {
-            currencyCount++;
+            FindFirstObjectByType<PlayerHUD>().UpdateCurrency();
             Destroy(gameObject);
-            GetComponent<PlayerHUD>().UpdateCurrency(currencyCount);
         }
     }
 }
