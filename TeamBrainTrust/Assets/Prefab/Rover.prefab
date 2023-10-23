@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 6935073296636286297}
   - component: {fileID: 9086169235841065906}
   - component: {fileID: 8973284335520174070}
+  - component: {fileID: 6077379521076529736}
   m_Layer: 0
   m_Name: Rover
   m_TagString: Untagged
@@ -361,6 +362,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ec4dc6bd8f64037895b9476079b8d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6077379521076529736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579213911671191929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd415b15434a46958cf57bbb2779d54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5365385077975589791
