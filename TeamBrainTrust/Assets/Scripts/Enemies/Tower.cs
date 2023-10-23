@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Enemies
@@ -24,7 +25,8 @@ namespace Enemies
 
         private void Shoot()
         {
-            Instantiate(projectilePrefab);
+            GameObject projectile = Instantiate(projectilePrefab,transform.position, transform.rotation);
+           
         }
 
     }

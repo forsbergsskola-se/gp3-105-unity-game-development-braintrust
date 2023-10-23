@@ -112,10 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b11c19b2174404b82f51f8cc13d4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compounds: []
+  compounds:
+  - {fileID: 0}
   cratesLoaded: 0
   cratesRequired: 0
   isObjectiveCompleted: 0
+  questActive: 0
 --- !u!114 &8112139334602716489
 MonoBehaviour:
   m_ObjectHideFlags: 0
