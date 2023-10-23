@@ -1,5 +1,6 @@
 ﻿using System;
 using Player;
+using TMPro;
 using UnityEngine;
 using Vehicle;
 
@@ -11,6 +12,7 @@ namespace UI
         public HealthBar roverHealthBar;
         public GameObject roverHUD;
         public PlayerStats playerStats;
+        public TextMeshProUGUI currencyText;
 
         private void Start()
         {
@@ -27,6 +29,11 @@ namespace UI
         public void DisableRoverUI()
         {
             roverHUD.gameObject.SetActive(false);
+        }
+
+        public void UpdateCurrency(int currency)
+        {
+            
         }
     }
 }
