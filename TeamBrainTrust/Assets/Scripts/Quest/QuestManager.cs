@@ -10,9 +10,11 @@ namespace Quest
         public int cratesRequired;
         private int questCompleted;
         public bool isObjectiveCompleted;
+        public bool questActive;
 
         public void GetNewQuest()
         {
+            questActive = true;
             Debug.Log("get new quest");
             cratesRequired = compounds[questCompleted].crates;
             isObjectiveCompleted = false;

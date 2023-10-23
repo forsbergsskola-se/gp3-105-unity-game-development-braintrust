@@ -15,7 +15,7 @@ namespace Quest
         private void Interact(GameObject player)
         {
             QuestManager manager = GetComponent<QuestManager>();
-            if (player.GetComponent<PlayerStats>().questActive)
+            if (manager.questActive)
             {
                 if (manager.isObjectiveCompleted)
                 {
@@ -24,14 +24,12 @@ namespace Quest
                 return;
             }
             
-            player.GetComponent<PlayerStats>().questActive = true;
-            
             manager.GetNewQuest();
         }
 
         private void GiveReward()
         {
-            
+            GetComponent<QuestManager>().questActive = false;
         }
         
     }
