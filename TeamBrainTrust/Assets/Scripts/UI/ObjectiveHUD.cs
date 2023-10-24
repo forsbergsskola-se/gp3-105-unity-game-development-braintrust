@@ -8,13 +8,20 @@ namespace UI
 {
     public class ObjectiveHUD : MonoBehaviour
     {
+        public static ObjectiveHUD i;
+        
         public UnityEvent<string> OnUpdateObjective = new UnityEvent<string>();
         public TextMeshProUGUI infoText;
 
+        private void Awake()
+        {
+            i = this;
+        }
 
         private void Start()
         {
             OnUpdateObjective.AddListener(UpdateObjectiveUI);
+            
             QuestManager.i.OnQuestAccepted.AddListener(DisplayUI);
             QuestManager.i.OnQuestCompleted.AddListener(HideUI);
             
