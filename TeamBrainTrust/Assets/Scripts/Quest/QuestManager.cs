@@ -1,10 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Compounds;
+using UI;
+using UnityEngine.Events;
 
 namespace Quest
 {
     public class QuestManager : MonoBehaviour
     {
+        public static QuestManager i;
+        
+        public UnityEvent OnQuestAccepted = new UnityEvent();
+        public UnityEvent OnQuestCompleted = new UnityEvent();
+        
+        
         public Compound[] compounds;
         public int cratesLoaded;
         public int cratesRequired;
@@ -12,25 +21,37 @@ namespace Quest
         public bool isObjectiveCompleted;
         public bool questActive;
 
-        //Accept new quest and setup the variables for the objectives
-        public void GetNewQuest()
+
+        private void Awake()
         {
-            Debug.Log("get new quest");
-            
+            i = this;
+        }
+
+
+        //Accept new quest and setup the variables for the objectives
+        public void AcceptQuest()
+        {
             questActive = true;
             cratesRequired = compounds[questCompleted].crates;  //Get the current compound and the amount of crates that is contained in that compound
             isObjectiveCompleted = false;
             cratesLoaded = 0;
+
+            UpdateObjective("Get to the Compound");
+            OnQuestAccepted.Invoke();
         }
 
         public void OnEnterCompound()
         {
-            Debug.Log("enter compound");
+            UpdateObjective(@$"Load crates
+                Crates Loaded {cratesLoaded} / {cratesRequired}");
         }
 
         public void LoadCrate()
         {
             cratesLoaded++;
+            UpdateObjective(@$"Load crates
+                Crates Loaded {cratesLoaded} / {cratesRequired}");
+            
             if (cratesLoaded == cratesRequired) //When all crates are loaded the quest is completed and ready to hand in to quest giver
             {
                 ObjectiveCompleted();
@@ -40,6 +61,19 @@ namespace Quest
         public void ObjectiveCompleted()
         {
             isObjectiveCompleted = true;
+            UpdateObjective("Return to Questgiver with the crates");
+        }
+        
+
+        public void UpdateObjective(string objectiveInfo)
+        {
+            FindFirstObjectByType<ObjectiveHUD>().OnUpdateObjective.Invoke(objectiveInfo);
+        }
+
+        public void CompleteQuest()
+        {
+            questActive = false;
+            OnQuestCompleted.Invoke();
         }
 
     }

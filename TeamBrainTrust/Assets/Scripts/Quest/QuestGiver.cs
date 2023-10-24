@@ -20,7 +20,7 @@ namespace Quest
             {
                 if (manager.isObjectiveCompleted)
                 {
-                    GiveReward();
+                    CompleteQuest();
                     return;
                 }
 
@@ -28,12 +28,13 @@ namespace Quest
                 return;
             }
             
-            manager.GetNewQuest();
+            manager.AcceptQuest();
         }
 
-        private void GiveReward()
+        private void CompleteQuest()
         {
-            GetComponent<QuestManager>().questActive = false;
+            GetComponent<QuestManager>().CompleteQuest();
+            
         }
         
     }

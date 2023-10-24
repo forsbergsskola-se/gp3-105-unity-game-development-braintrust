@@ -14,6 +14,7 @@ namespace UI
         public PlayerStats playerStats;
         public TextMeshProUGUI currencyText;
         public int currencyCount;
+        
         private void Start()
         {
             playerHealthBar.SetupUI(playerStats.maxHealth, playerStats.currentHealth);
