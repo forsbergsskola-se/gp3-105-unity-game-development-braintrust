@@ -8,7 +8,6 @@ namespace General
     {
         public bool isPlayerActive = true;
         private bool isPlayerInReach;
-        public bool IsPlayerHoldingCrate;
         private GameObject player;
         public UnityEvent<GameObject> onInteraction = new UnityEvent<GameObject>();
 
@@ -19,12 +18,7 @@ namespace General
                 isPlayerInReach = false;
             }
             
-            if (isPlayerInReach && isPlayerActive && !IsPlayerHoldingCrate && Input.GetButtonDown("Interact"))
-            {
-                onInteraction.Invoke(player);
-            }
-
-            if (isPlayerInReach && IsPlayerHoldingCrate && Input.GetButtonDown("Interact"))
+            if (isPlayerInReach && isPlayerActive && Input.GetButtonDown("Interact"))
             {
                 onInteraction.Invoke(player);
             }

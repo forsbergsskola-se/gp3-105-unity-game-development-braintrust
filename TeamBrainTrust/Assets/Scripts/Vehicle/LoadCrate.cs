@@ -8,15 +8,22 @@ namespace Vehicle
     {
         private void Start()
         {
-            //GetComponent<Interactable>().onInteraction.AddListener();
+            GetComponent<Interactable>().onInteraction.AddListener(LoadCrateOnRover);
         }
 
-        private void LoadCrateOnRover()
-        { 
-            gameObject.transform.GetChild(0);
-            
+        private void LoadCrateOnRover(GameObject player)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                Transform child = gameObject.transform.GetChild(i);
+
+                if (!child.gameObject.activeSelf)
+                {
+                    child.gameObject.SetActive(true);
+                    return;
+                }
+            }
             
         }
-        
     }
 }
