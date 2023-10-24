@@ -42,15 +42,13 @@ namespace Quest
 
         public void OnEnterCompound()
         {
-            UpdateObjective(@$"Load crates
-                Crates Loaded {cratesLoaded} / {cratesRequired}");
+            UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
         }
 
         public void LoadCrate()
         {
             cratesLoaded++;
-            UpdateObjective(@$"Load crates
-                Crates Loaded {cratesLoaded} / {cratesRequired}");
+            UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
             
             if (cratesLoaded == cratesRequired) //When all crates are loaded the quest is completed and ready to hand in to quest giver
             {
@@ -67,7 +65,7 @@ namespace Quest
 
         public void UpdateObjective(string objectiveInfo)
         {
-            FindFirstObjectByType<ObjectiveHUD>().OnUpdateObjective.Invoke(objectiveInfo);
+            ObjectiveHUD.i.OnUpdateObjective.Invoke(objectiveInfo);
         }
 
         public void CompleteQuest()
