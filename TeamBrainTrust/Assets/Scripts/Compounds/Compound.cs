@@ -10,7 +10,7 @@ namespace Compounds
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            FindFirstObjectByType<QuestManager>().EnterCompound();
+            FindFirstObjectByType<QuestManager>().OnEnterCompound();
             
         }
         

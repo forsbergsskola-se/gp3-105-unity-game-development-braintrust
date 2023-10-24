@@ -15,12 +15,16 @@ namespace Quest
         private void Interact(GameObject player)
         {
             QuestManager manager = GetComponent<QuestManager>();
+            
             if (manager.questActive)
             {
                 if (manager.isObjectiveCompleted)
                 {
                     GiveReward();
+                    return;
                 }
+
+                //Add popup UI that tells the player that they are already on a Quest
                 return;
             }
             
