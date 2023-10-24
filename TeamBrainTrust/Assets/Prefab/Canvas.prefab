@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealthBar: {fileID: 8291228171327361088}
-  roverHealthBar: {fileID: 0}
+  roverHealthBar: {fileID: 1884006025149388661}
   roverHUD: {fileID: 0}
   playerStats: {fileID: 0}
   currencyText: {fileID: 0}
@@ -1296,6 +1296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5566165ff3142309b03dd0159157973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnUpdateObjective:
+    m_PersistentCalls:
+      m_Calls: []
+  infoText: {fileID: 8592823413444081063}
 --- !u!1 &5074880532918680528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,6 +1386,7 @@ GameObject:
   - component: {fileID: 7905243780006127906}
   - component: {fileID: 9052150515911681870}
   - component: {fileID: 6283194294607919254}
+  - component: {fileID: 1884006025149388661}
   m_Layer: 5
   m_Name: Hp Bar Rover
   m_TagString: Untagged
@@ -1470,6 +1475,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1884006025149388661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753088807640457968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd7cfc23e95415b86c24adf62ef2f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5788639170816806779
 GameObject:
   m_ObjectHideFlags: 0
