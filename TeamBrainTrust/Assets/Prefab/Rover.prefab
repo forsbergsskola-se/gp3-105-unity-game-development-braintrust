@@ -319,7 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerActive: 1
-  IsPlayerHoldingCrate: 0
   onInteraction:
     m_PersistentCalls:
       m_Calls: []
@@ -392,7 +391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7717212940407396318
 Transform:
   m_ObjectHideFlags: 0
