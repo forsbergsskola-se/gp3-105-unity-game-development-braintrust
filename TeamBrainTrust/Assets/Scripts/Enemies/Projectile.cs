@@ -8,15 +8,23 @@ namespace Enemies
         public float speed;
         public int damage;
 
+        public float lifeTime;
+
         private void Update()
         {
             transform.Translate(Vector3.down * speed * Time.deltaTime, Space.Self);
-        }
 
-        public void SetupProjectile(Vector3 rotation)
+            lifeTime -= Time.deltaTime;
+
+            if (lifeTime <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            transform.Rotate(rotation);
-            
+            Destroy(gameObject);
         }
     }
 }

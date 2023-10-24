@@ -14,7 +14,13 @@ namespace Enemies
 
         private void Update()
         {
-            countdown = countdown - Time.deltaTime;
+            if(!IsTowerActive())
+            {
+                return;
+            }
+            
+            countdown -= Time.deltaTime;
+            
             if (countdown <= 0)
             {
                 Shoot();
@@ -23,10 +29,18 @@ namespace Enemies
             }
         }
 
+        private bool IsTowerActive()
+        {
+            //Check if Player is in range?
+            
+            //Check if player is on current Objective?
+    
+            return true;
+        }
+
         private void Shoot()
         {
-            GameObject projectile = Instantiate(projectilePrefab,transform.position, transform.rotation);
-           
+            Instantiate(projectilePrefab, transform.position, transform.rotation);
         }
 
     }
