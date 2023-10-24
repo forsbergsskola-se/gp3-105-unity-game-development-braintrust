@@ -4,6 +4,7 @@ using Player;
 using UI;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 namespace Vehicle
@@ -11,7 +12,7 @@ namespace Vehicle
     public class RoverPilot : MonoBehaviour
     {
         public bool isPlayerInRover;
-        private GameObject player;
+        public GameObject player;
 
         private void Start()
         {
@@ -22,32 +23,44 @@ namespace Vehicle
         {
             if (isPlayerInRover && Input.GetButtonDown("Interact"))
             {
+                Debug.Log("!");
                 ExitRover();
             }
         }
 
         public void EnterRover(GameObject player)
         {
-            RoverMovement rm = GetComponent<RoverMovement>();
-            player.GetComponent<PlayerStats>().rover = this;
-            GetComponent<RoverStats>().playerStats = player.GetComponent<PlayerStats>();
+            if(player.GetComponent<PlayerStats>().itemInHand != null)
+                return;
             
-            FindFirstObjectByType<CameraFollower>().SetTarget(gameObject, rm.maxSpeed);
-            player.SetActive(false);
-            isPlayerInRover = true;
-            this.player = player;
+            RoverMovement rm = GetComponent<RoverMovement>();
+            SwitchController(rm.maxSpeed, player, gameObject);  //Switch from controlling the player to controlling the rover
+
             FindFirstObjectByType<PlayerHUD>().SetupRoverUI(GetComponent<RoverStats>());
+            
+            this.player = player;
         }
 
         public void ExitRover()
         {
+            if(!isPlayerInRover)
+                return;
+            
             PlayerMovement pm = player.GetComponent<PlayerMovement>();
-            player.GetComponent<PlayerStats>().rover = null;
-            FindFirstObjectByType<CameraFollower>().SetTarget(player.gameObject, pm.speed);
-            isPlayerInRover = false;
-            player.SetActive(true);
+            SwitchController(pm.speed, player, player); //Switch from controlling the rover to controlling the player
+            
             player.transform.position = transform.position + new Vector3(1, 0, 0);
             FindFirstObjectByType<PlayerHUD>().DisableRoverUI();
+            
+            player = null;
+        }
+
+        public void SwitchController(float speed, GameObject player, GameObject controllerGameObject)
+        {
+            FindFirstObjectByType<CameraFollower>().SetTarget(controllerGameObject, speed);
+            
+            player.SetActive(!player.activeSelf);
+            isPlayerInRover = !isPlayerInRover;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using General;
+﻿using System;
+using General;
 using Player;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -10,19 +11,31 @@ namespace Vehicle
     {
         public int explosiveDamage;
         
-        [HideInInspector]public PlayerStats playerStats;
-        
+
+
         public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);
-            FindFirstObjectByType<PlayerHUD>().roverHealthBar.UpdateUI(currentHealth);
+            
+            GameObject player = GetComponent<RoverPilot>().player;
+            
+            if(player != null)
+                FindFirstObjectByType<PlayerHUD>().roverHealthBar.UpdateUI(currentHealth);
         }
         
         public override void Death()
         {
             base.Death();
-            playerStats.TakeDamage(explosiveDamage);
+            
+            GameObject player = GetComponent<RoverPilot>().player;
+            
+            if(player == null)
+                return;
+            
+            player.GetComponent<PlayerStats>().TakeDamage(explosiveDamage);
             GetComponent<RoverPilot>().ExitRover();
+            
+            
             Destroy(gameObject);
         }
     }
