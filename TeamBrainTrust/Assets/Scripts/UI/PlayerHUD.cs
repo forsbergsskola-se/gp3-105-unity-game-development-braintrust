@@ -41,9 +41,11 @@ namespace UI
 
         public void UpdateScore()
         {
-            
+
             scoreCount = 25;
-            scoreText.text = $"{scoreText} % ";
+            scoreText.text = $"{scoreCount}% COMPLETED";
+            
+            
 
         }
     }

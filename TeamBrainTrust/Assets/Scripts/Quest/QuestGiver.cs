@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using General;
 using Player;
+using UI;
 
 namespace Quest
 {
@@ -22,6 +23,7 @@ namespace Quest
                 {
                     CompleteQuest();
                     return;
+                    
                 }
 
                 //Add popup UI that tells the player that they are already on a Quest

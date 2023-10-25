@@ -67,13 +67,13 @@ namespace Quest
         {
             ObjectiveHUD.i.OnUpdateObjective.Invoke(objectiveInfo);
         }
-
         public void CompleteQuest()
         {
             questActive = false;
             OnQuestCompleted.Invoke();
-            
-            
+           FindObjectOfType<PlayerHUD>().UpdateScore();
+           
+           
         }
 
     }
