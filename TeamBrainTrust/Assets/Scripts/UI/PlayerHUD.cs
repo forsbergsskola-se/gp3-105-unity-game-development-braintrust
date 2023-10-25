@@ -41,8 +41,10 @@ namespace UI
 
         public void UpdateScore()
         {
-            scoreCount++;
-            scoreText.text = scoreCount.ToString();
+            
+            scoreCount = 25;
+            scoreText.text = $"{scoreText} % ";
+
         }
     }
 }
