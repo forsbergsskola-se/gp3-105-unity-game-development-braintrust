@@ -14,6 +14,8 @@ namespace UI
         public PlayerStats playerStats;
         public TextMeshProUGUI currencyText;
         public int currencyCount;
+        public TextMeshProUGUI scoreText;
+        public int scoreCount;
         
         private void Start()
         {
@@ -35,6 +37,12 @@ namespace UI
         {
             currencyCount++;
             currencyText.text = currencyCount.ToString();
+        }
+
+        public void UpdateScore()
+        {
+            scoreCount++;
+            scoreText.text = scoreCount.ToString();
         }
     }
 }
