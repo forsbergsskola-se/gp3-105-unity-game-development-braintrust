@@ -72,6 +72,7 @@ namespace Quest
         {
             questActive = false;
             OnQuestCompleted.Invoke();
+            
         }
 
     }
