@@ -112,6 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b11c19b2174404b82f51f8cc13d4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnQuestAccepted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnQuestCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   compounds:
   - {fileID: 0}
   cratesLoaded: 0
