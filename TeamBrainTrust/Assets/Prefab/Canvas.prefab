@@ -53,9 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthBar: {fileID: 8291228171327361088}
   roverHealthBar: {fileID: 1884006025149388661}
-  roverHUD: {fileID: 0}
+  roverHUD: {fileID: 3326544984783010725}
   playerStats: {fileID: 0}
-  currencyText: {fileID: 0}
+  currencyText: {fileID: 8685479366818019494}
   currencyCount: 0
 --- !u!222 &3460601024811047578
 CanvasRenderer:
