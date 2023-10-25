@@ -10,8 +10,16 @@ namespace Player
 {
     public class PlayerStats : Stats
     {
+        public static PlayerStats i;
+        
         public PickUpItem itemInHand; //This is the item that is picked up in the PickUpItem script
         public RoverPilot rover; //The rover the player currently is driving
+
+        public override void Awake()
+        {
+            i = this;
+        }
+
         public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);
