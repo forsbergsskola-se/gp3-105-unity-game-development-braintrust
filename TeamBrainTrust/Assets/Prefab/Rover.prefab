@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerInRover: 0
+  player: {fileID: 0}
 --- !u!114 &9086169235841065906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +351,6 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   explosiveDamage: 3
-  playerStats: {fileID: 0}
 --- !u!114 &8973284335520174070
 MonoBehaviour:
   m_ObjectHideFlags: 0
