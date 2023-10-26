@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using Compounds;
+using Player;
 using UI;
 using UnityEngine.Events;
 
@@ -22,11 +23,39 @@ namespace Quest
         [HideInInspector] public bool questActive;
 
 
+        public State state;
+        public enum State
+        {
+            AcceptQuest,
+            EnterRover1,
+            EnterCompound,
+            ExitRover,
+            LoadCrates,
+            EnterRover2,
+            CompleteQuest
+        }
+        
+        enum Direction {North, East, South, West};
+
         private void Awake()
         {
             i = this;
         }
 
+        private void Start()
+        {
+        }
+
+        private void OnExitRover()
+        {
+            UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
+
+        }
+
+        private void OnEnterRover()
+        {
+            UpdateObjective("");
+        }
 
         //Accept new quest and setup the variables for the objectives
         public void AcceptQuest()
@@ -48,11 +77,6 @@ namespace Quest
             UpdateObjective("Exit Rover");
         }
 
-        public void OnExitRover()
-        {
-            UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
-
-        }
 
         public void LoadCrate()
         {
@@ -75,6 +99,7 @@ namespace Quest
         public void UpdateObjective(string objectiveInfo)
         {
             ObjectiveHUD.i.OnUpdateObjective.Invoke(objectiveInfo);
+            state++;
         }
         public void CompleteQuest()
         {
