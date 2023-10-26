@@ -38,7 +38,7 @@ namespace UI
             roverHUD.gameObject.SetActive(false);
         }
         
-        public void UpdateCurrency()
+        public void UpdateCredits()
         {
             currencyCount++;
             currencyText.text = currencyCount.ToString();

@@ -11,6 +11,7 @@ namespace Vehicle
         private void Start()
         {
             GetComponent<Interactable>().onInteraction.AddListener(LoadCrateOnRover);
+            QuestManager.i.OnQuestCompleted.AddListener(UnloadCrateFromRover);
         }
 
         private void LoadCrateOnRover(GameObject player)
@@ -33,6 +34,15 @@ namespace Vehicle
                 }
             }
             
+        }
+        [ContextMenu("TestUnload")]
+        public void UnloadCrateFromRover()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                Transform child = gameObject.transform.GetChild(i);
+                child.gameObject.SetActive(false);
+            }
         }
     }
 }
