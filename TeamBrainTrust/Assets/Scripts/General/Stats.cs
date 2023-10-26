@@ -10,8 +10,6 @@ namespace General
         public virtual void Awake()
         {
             currentHealth = maxHealth;
-            Debug.Log(currentHealth);
-            
         }
         [ContextMenu("testdamage")]
         public void testdamage()
