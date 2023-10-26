@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d311e437db2d4727ab1cf751b95a220f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CreditPrefab: {fileID: 0}
+  CreditPrefab: {fileID: 3884029261548221919, guid: 508e9f99580c8e840ac5190d3d313b32, type: 3}
 --- !u!114 &9028380262793377779
 MonoBehaviour:
   m_ObjectHideFlags: 0

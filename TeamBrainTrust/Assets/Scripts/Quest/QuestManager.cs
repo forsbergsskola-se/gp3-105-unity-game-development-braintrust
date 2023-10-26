@@ -48,6 +48,12 @@ namespace Quest
             PrepareQuest();
         }
 
+        private void Update()
+        {
+            Debug.Log(state.ToString());
+
+        }
+
         private void PrepareQuest()
         {
             UpdateObjective("Speak to Beep Boop to Receive a Quest");
@@ -71,14 +77,15 @@ namespace Quest
 
         public void OnEnterCompound()
         {
-            UpdateObjective("Exit Rover");
+            if(state == State.EnterCompound)
+                UpdateObjective("Exit Rover");
         }
 
 
         public void LoadCrate()
         {
             cratesLoaded++;
-            UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
+            UpdateObjective(@$"Load crates ({cratesLoaded} / {cratesRequired})");
             
             if (cratesLoaded == cratesRequired) //When all crates are loaded the quest is completed and ready to hand in to quest giver
                 ObjectiveCompleted();
@@ -115,7 +122,7 @@ namespace Quest
         {
             if (state == State.ExitRover1)
             {
-                UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
+                UpdateObjective(@$"Load crates ({cratesLoaded} / {cratesRequired})");
             }
         }
 
