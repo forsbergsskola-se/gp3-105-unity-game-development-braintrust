@@ -47,9 +47,10 @@ namespace Quest
         {
             for (int i = 0; i < 10; i++)
             {
-                float x = Random.Range(-1, 1);
-                float y = Random.Range(-1, 1);
-                float spitForce = Random.Range(10, 100);
+                float angle = Random.Range(0, 360) * Mathf.Deg2Rad;
+                float x = Mathf.Cos(angle);
+                float y = Mathf.Sin(angle);
+                float spitForce = Random.Range(100, 1000);
                 GameObject credit = Instantiate(CreditPrefab, transform.position, quaternion.identity);
                 credit.GetComponent<Rigidbody2D>().AddForce(new Vector2(x,y) * spitForce);
                 yield return new WaitForSeconds(0.5f);
