@@ -32,7 +32,8 @@ namespace Quest
         public void AcceptQuest()
         {
             questActive = true;
-            cratesRequired = compounds[questCompleted].crates;  //Get the current compound and the amount of crates that is contained in that compound
+            cratesRequired = 4;
+            //cratesRequired = compounds[questCompleted].crates;  //Get the current compound and the amount of crates that is contained in that compound
             isObjectiveCompleted = false;
             cratesLoaded = 0;
 
