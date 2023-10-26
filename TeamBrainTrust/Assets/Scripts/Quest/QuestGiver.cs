@@ -7,6 +7,7 @@ namespace Quest
 {
     public class QuestGiver : MonoBehaviour
     {
+        public GameObject CreditPrefab;
         
         private void Start()
         {
@@ -36,7 +37,8 @@ namespace Quest
         private void CompleteQuest()
         {
             GetComponent<QuestManager>().CompleteQuest();
-            
+            Instantiate(CreditPrefab, transform.position, transform.rotation);
+
         }
         
     }
