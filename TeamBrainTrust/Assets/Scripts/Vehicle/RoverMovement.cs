@@ -55,12 +55,10 @@ namespace Vehicle
             else if (yInput > 0 && currentSpeed <= maxSpeed)
             {
                 currentSpeed += acceleration * Time.deltaTime;
-                isBreaking = false;
             }
             else if (yInput < 0 && currentSpeed >= -maxSpeed)
             {
                 currentSpeed -= acceleration * Time.deltaTime;
-                isBreaking = false;
             }
         }
 
@@ -84,8 +82,6 @@ namespace Vehicle
 
         void Break(float power)
         {
-            isBreaking = true;
-            
             if (currentSpeed != 0)
             {
                 currentSpeed = Mathf.Lerp(currentSpeed, 0, power * Time.deltaTime);
