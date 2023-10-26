@@ -17,6 +17,7 @@ namespace Player
 
         public override void Awake()
         {
+            base.Awake();
             i = this;
         }
 
