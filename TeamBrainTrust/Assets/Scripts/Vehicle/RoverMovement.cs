@@ -18,7 +18,7 @@ namespace Vehicle
         
         [HideInInspector]public float currentSpeed;
         private float yInput;
-        private bool isBreaking;
+        
         private void Update()
         {
             if (GetComponent<RoverPilot>().isPlayerInRover)
