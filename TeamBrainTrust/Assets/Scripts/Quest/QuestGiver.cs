@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using General;
 using Player;
 using UI;
+using Unity.Mathematics;
+using Random = UnityEngine.Random;
 
 namespace Quest
 {
@@ -37,10 +40,21 @@ namespace Quest
         private void CompleteQuest()
         {
             GetComponent<QuestManager>().CompleteQuest();
-            Instantiate(CreditPrefab, transform.position + new Vector3(1, 0, 0), transform.rotation);
-
+            StartCoroutine("SpitCredits");
         }
         
+        private IEnumerator SpitCredits()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                float x = Random.Range(-1, 1);
+                float y = Random.Range(-1, 1);
+                float spitForce = Random.Range(10, 100);
+                GameObject credit = Instantiate(CreditPrefab, transform.position, quaternion.identity);
+                credit.GetComponent<Rigidbody2D>().AddForce(new Vector2(x,y) * spitForce);
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
     }
     
     

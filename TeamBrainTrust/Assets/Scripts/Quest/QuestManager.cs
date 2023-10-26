@@ -3,6 +3,7 @@ using UnityEngine;
 using Compounds;
 using UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Quest
 {
@@ -72,6 +73,7 @@ namespace Quest
         {
             questActive = false;
             OnQuestCompleted.Invoke();
+            
         }
 
     }
