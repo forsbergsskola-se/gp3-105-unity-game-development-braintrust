@@ -3,7 +3,6 @@ using UnityEngine;
 using Compounds;
 using UI;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 namespace Quest
 {
@@ -11,16 +10,16 @@ namespace Quest
     {
         public static QuestManager i;
         
-        public UnityEvent OnQuestAccepted = new UnityEvent();
-        public UnityEvent OnQuestCompleted = new UnityEvent();
+        [HideInInspector] public UnityEvent OnQuestAccepted = new UnityEvent();
+        [HideInInspector] public UnityEvent OnQuestCompleted = new UnityEvent();
         
         
         public Compound[] compounds;
-        public int cratesLoaded;
-        public int cratesRequired;
-        private int questCompleted;
-        public bool isObjectiveCompleted;
-        public bool questActive;
+        [HideInInspector] public int cratesLoaded;
+        [HideInInspector] public int cratesRequired;
+        [HideInInspector] private int questCompleteCount;
+        [HideInInspector] public bool isObjectiveCompleted;
+        [HideInInspector] public bool questActive;
 
 
         private void Awake()
@@ -37,6 +36,8 @@ namespace Quest
             //cratesRequired = compounds[questCompleted].crates;  //Get the current compound and the amount of crates that is contained in that compound
             isObjectiveCompleted = false;
             cratesLoaded = 0;
+            
+            compounds[questCompleteCount].SetIsObjective(true);
 
             UpdateObjective("Get to the Compound");
             OnQuestAccepted.Invoke();
@@ -44,7 +45,13 @@ namespace Quest
 
         public void OnEnterCompound()
         {
+            UpdateObjective("Exit Rover");
+        }
+
+        public void OnExitRover()
+        {
             UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
+
         }
 
         public void LoadCrate()
@@ -71,9 +78,11 @@ namespace Quest
         }
         public void CompleteQuest()
         {
+            compounds[questCompleteCount].SetIsObjective(false);
+            questCompleteCount++;
+
             questActive = false;
             OnQuestCompleted.Invoke();
-            
         }
 
     }
