@@ -71,9 +71,6 @@ namespace Quest
         {
             questActive = false;
             OnQuestCompleted.Invoke();
-           FindObjectOfType<PlayerHUD>().UpdateScore();
-           
-           
         }
 
     }
