@@ -33,11 +33,11 @@ namespace Quest
             
             manager.AcceptQuest();
         }
-
+        [ContextMenu("CoinTest")]
         private void CompleteQuest()
         {
             GetComponent<QuestManager>().CompleteQuest();
-            Instantiate(CreditPrefab, transform.position, transform.rotation);
+            Instantiate(CreditPrefab, transform.position + new Vector3(1, 0, 0), transform.rotation);
 
         }
         
