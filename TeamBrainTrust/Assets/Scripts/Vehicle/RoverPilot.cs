@@ -11,6 +11,10 @@ namespace Vehicle
 {
     public class RoverPilot : MonoBehaviour
     {
+        [HideInInspector] public UnityEvent OnEnter = new UnityEvent();
+        [HideInInspector] public UnityEvent OnExit = new UnityEvent();
+
+        
         public bool isPlayerInRover;
         public GameObject player;
 
@@ -39,6 +43,7 @@ namespace Vehicle
             PlayerHUD.i.SetupRoverUI(GetComponent<RoverStats>());
             
             this.player = player;
+            OnEnter.Invoke();
         }
 
         public void ExitRover()
@@ -53,6 +58,7 @@ namespace Vehicle
             PlayerHUD.i.DisableRoverUI();
             
             player = null;
+            OnExit.Invoke();
         }
 
         public void SwitchController(float speed, GameObject player, GameObject controllerGameObject)
