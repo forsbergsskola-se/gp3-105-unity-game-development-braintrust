@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 9086169235841065906}
   - component: {fileID: 8973284335520174070}
   - component: {fileID: 6077379521076529736}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
