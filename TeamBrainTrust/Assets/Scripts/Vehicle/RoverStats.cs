@@ -20,7 +20,7 @@ namespace Vehicle
             GameObject player = GetComponent<RoverPilot>().player;
             
             if(player != null)
-                FindFirstObjectByType<PlayerHUD>().roverHealthBar.UpdateUI(currentHealth);
+                PlayerHUD.i.roverHealthBar.UpdateUI(currentHealth);
         }
         
         public override void Death()

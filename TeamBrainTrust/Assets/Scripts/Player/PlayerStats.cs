@@ -23,7 +23,7 @@ namespace Player
         public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);
-            FindFirstObjectByType<PlayerHUD>().playerHealthBar.UpdateUI(currentHealth);
+            PlayerHUD.i.playerHealthBar.UpdateUI(currentHealth);
         }
 
         public override void Death()

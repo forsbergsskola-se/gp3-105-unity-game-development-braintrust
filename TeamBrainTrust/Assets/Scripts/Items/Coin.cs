@@ -9,7 +9,7 @@ namespace Items
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
-            FindFirstObjectByType<PlayerHUD>().UpdateCurrency();
+            PlayerHUD.i.UpdateCurrency();
             Destroy(gameObject);
         }
     }

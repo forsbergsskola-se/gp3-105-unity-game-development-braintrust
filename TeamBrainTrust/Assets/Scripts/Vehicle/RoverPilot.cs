@@ -36,7 +36,7 @@ namespace Vehicle
             RoverMovement rm = GetComponent<RoverMovement>();
             SwitchController(rm.maxSpeed, player, gameObject);  //Switch from controlling the player to controlling the rover
 
-            FindFirstObjectByType<PlayerHUD>().SetupRoverUI(GetComponent<RoverStats>());
+            PlayerHUD.i.SetupRoverUI(GetComponent<RoverStats>());
             
             this.player = player;
         }
@@ -50,7 +50,7 @@ namespace Vehicle
             SwitchController(pm.speed, player, player); //Switch from controlling the rover to controlling the player
             
             player.transform.position = transform.position + new Vector3(1, 0, 0);
-            FindFirstObjectByType<PlayerHUD>().DisableRoverUI();
+            PlayerHUD.i.DisableRoverUI();
             
             player = null;
         }

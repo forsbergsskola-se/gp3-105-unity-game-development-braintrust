@@ -8,16 +8,23 @@ namespace UI
 {
     public class PlayerHUD : MonoBehaviour
     {
+        public static PlayerHUD i;
+        
+        
         public HealthBar playerHealthBar;
         public HealthBar roverHealthBar;
         public GameObject roverHUD;
-        public PlayerStats playerStats;
         public TextMeshProUGUI currencyText;
         public int currencyCount;
-        
+
+        private void Awake()
+        {
+            i = this;
+        }
+
         private void Start()
         {
-            playerHealthBar.SetupUI(playerStats.maxHealth, playerStats.currentHealth);
+            playerHealthBar.SetupUI(PlayerStats.i.maxHealth, PlayerStats.i.currentHealth);
         }
 
         public void SetupRoverUI(RoverStats roverStats)
