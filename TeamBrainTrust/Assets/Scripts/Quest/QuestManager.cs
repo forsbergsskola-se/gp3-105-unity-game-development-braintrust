@@ -26,15 +26,13 @@ namespace Quest
         public State state;
         public enum State
         {
-            NoQuest,
-            AcceptQuest,
-            EnterRover1,
-            EnterCompound,
-            ExitRover1,
-            LoadCrates,
-            EnterRover2,
-            ExitRover2,
-            CompleteQuest
+            NoQuest, //TALK TO BEBOP TO GET A QUEST
+            EnterRover1, //ENTER ROVER
+            EnterCompound, //GET TO THE COMPOUND
+            ExitRover1, //EXIT ROVER
+            LoadCrates, //LOAD CRATES X/4
+            EnterRover2, //ENTER ROVER
+            CompleteQuest //RETURN TO QUESTGIVER WITH CRATES
         }
         
         private void Awake()
@@ -57,43 +55,16 @@ namespace Quest
         }
         
 
-        private void OnExitRover()
-        {
-            if (state == State.ExitRover1)
-            {
-                UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
-            }
-            else if(state == State.ExitRover2)
-            {
-                UpdateObjective("Speak to the Beep Boop to CompleteQuest");
-            }
-        }
-
-        private void OnEnterRover()
-        {
-            if (state == State.EnterRover1)
-            {
-                UpdateObjective("Get to the Compound");
-                compounds[questCompleteCount].SetIsObjective(true);
-            }
-            else if(state == State.EnterRover2)
-            {
-                UpdateObjective("Return to Quest Giver");
-            }
-        }
 
         //Accept new quest and setup the variables for the objectives
         public void AcceptQuest()
         {
             questActive = true;
             cratesRequired = 4;
-            //cratesRequired = compounds[questCompleted].crates;  //Get the current compound and the amount of crates that is contained in that compound
             isObjectiveCompleted = false;
             cratesLoaded = 0;
-            
 
             UpdateObjective("Enter Rover");
-            state = State.AcceptQuest;
             
             OnQuestAccepted.Invoke();
         }
@@ -123,6 +94,10 @@ namespace Quest
         public void UpdateObjective(string objectiveInfo)
         {
             ObjectiveHUD.i.OnUpdateObjective.Invoke(objectiveInfo);
+
+            if (state == State.LoadCrates && cratesLoaded < cratesRequired)
+                return;
+            
             state++;
         }
         
@@ -134,6 +109,27 @@ namespace Quest
             questActive = false;
             PrepareQuest();
             OnQuestCompleted.Invoke();
+        }
+        
+        private void OnExitRover()
+        {
+            if (state == State.ExitRover1)
+            {
+                UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
+            }
+        }
+
+        private void OnEnterRover()
+        {
+            if (state == State.EnterRover1)
+            {
+                UpdateObjective("Get to the Compound");
+                compounds[questCompleteCount].SetIsObjective(true);
+            }
+            else if(state == State.EnterRover2)
+            {
+                UpdateObjective("Return to Beep Boop with crates");
+            }
         }
 
     }

@@ -19,28 +19,10 @@ namespace UI
 
             OnUpdateObjective.AddListener(UpdateObjectiveUI);
         }
-
-        // private void Start()
-        // {
-        //     // QuestManager.i.OnQuestAccepted.AddListener(DisplayUI);
-        //     // QuestManager.i.OnQuestCompleted.AddListener(HideUI);
-        //     
-        //     // HideUI();
-        // }
-
-        // public void DisplayUI()
-        // {
-        //     gameObject.SetActive(true);
-        // }
-        //
-        // public void HideUI()
-        // {
-        //     gameObject.SetActive(false);
-        // }
+        
 
         public void UpdateObjectiveUI(string objectiveText)
         {
-            Debug.Log("");
             infoText.text = objectiveText;
         }
     }
