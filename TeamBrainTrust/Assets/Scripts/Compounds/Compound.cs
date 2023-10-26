@@ -13,7 +13,6 @@ namespace Compounds
 
         public void SetIsObjective(bool isObjective)
         {
-            Debug.Log("Set Objective");
             this.isObjective = isObjective;
             parkingSpace.gameObject.SetActive(isObjective);
 

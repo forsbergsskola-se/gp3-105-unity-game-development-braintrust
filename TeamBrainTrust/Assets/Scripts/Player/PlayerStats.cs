@@ -13,8 +13,8 @@ namespace Player
     {
         public static PlayerStats i;
         
-        [HideInInspector] public UnityEvent OnEnter = new UnityEvent();
-        [HideInInspector] public UnityEvent OnExit = new UnityEvent();
+        [FormerlySerializedAs("OnEnter")] [HideInInspector] public UnityEvent OnEnterRover = new UnityEvent();
+        [FormerlySerializedAs("OnExit")] [HideInInspector] public UnityEvent OnExitRover = new UnityEvent();
         
         
         public PickUpItem itemInHand; //This is the item that is picked up in the PickUpItem script

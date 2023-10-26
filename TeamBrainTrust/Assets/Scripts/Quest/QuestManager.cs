@@ -4,6 +4,7 @@ using Compounds;
 using Player;
 using UI;
 using UnityEngine.Events;
+using UnityEngine.PlayerLoop;
 
 namespace Quest
 {
@@ -22,21 +23,20 @@ namespace Quest
         [HideInInspector] public bool isObjectiveCompleted;
         [HideInInspector] public bool questActive;
 
-
         public State state;
         public enum State
         {
+            NoQuest,
             AcceptQuest,
             EnterRover1,
             EnterCompound,
-            ExitRover,
+            ExitRover1,
             LoadCrates,
             EnterRover2,
+            ExitRover2,
             CompleteQuest
         }
         
-        enum Direction {North, East, South, West};
-
         private void Awake()
         {
             i = this;
@@ -44,17 +44,42 @@ namespace Quest
 
         private void Start()
         {
+            PlayerStats.i.OnEnterRover.AddListener(OnEnterRover);
+            PlayerStats.i.OnExitRover.AddListener(OnExitRover);
+            
+            PrepareQuest();
         }
+
+        private void PrepareQuest()
+        {
+            UpdateObjective("Speak to Beep Boop to Receive a Quest");
+            state = State.NoQuest;
+        }
+        
 
         private void OnExitRover()
         {
-            UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
-
+            if (state == State.ExitRover1)
+            {
+                UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
+            }
+            else if(state == State.ExitRover2)
+            {
+                UpdateObjective("Speak to the Beep Boop to CompleteQuest");
+            }
         }
 
         private void OnEnterRover()
         {
-            UpdateObjective("");
+            if (state == State.EnterRover1)
+            {
+                UpdateObjective("Get to the Compound");
+                compounds[questCompleteCount].SetIsObjective(true);
+            }
+            else if(state == State.EnterRover2)
+            {
+                UpdateObjective("Return to Quest Giver");
+            }
         }
 
         //Accept new quest and setup the variables for the objectives
@@ -66,9 +91,10 @@ namespace Quest
             isObjectiveCompleted = false;
             cratesLoaded = 0;
             
-            compounds[questCompleteCount].SetIsObjective(true);
 
-            UpdateObjective("Get to the Compound");
+            UpdateObjective("Enter Rover");
+            state = State.AcceptQuest;
+            
             OnQuestAccepted.Invoke();
         }
 
@@ -84,15 +110,13 @@ namespace Quest
             UpdateObjective(@$"Load crates ( {cratesLoaded} / {cratesRequired} )");
             
             if (cratesLoaded == cratesRequired) //When all crates are loaded the quest is completed and ready to hand in to quest giver
-            {
                 ObjectiveCompleted();
-            }
         }
 
         public void ObjectiveCompleted()
         {
             isObjectiveCompleted = true;
-            UpdateObjective("Return to Questgiver with the crates");
+            UpdateObjective("Return crates to Beep Boop");
         }
         
 
@@ -101,12 +125,14 @@ namespace Quest
             ObjectiveHUD.i.OnUpdateObjective.Invoke(objectiveInfo);
             state++;
         }
+        
         public void CompleteQuest()
         {
             compounds[questCompleteCount].SetIsObjective(false);
             questCompleteCount++;
 
             questActive = false;
+            PrepareQuest();
             OnQuestCompleted.Invoke();
         }
 

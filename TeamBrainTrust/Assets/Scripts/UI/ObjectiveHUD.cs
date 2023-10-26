@@ -16,30 +16,31 @@ namespace UI
         private void Awake()
         {
             i = this;
-        }
 
-        private void Start()
-        {
             OnUpdateObjective.AddListener(UpdateObjectiveUI);
-            
-            QuestManager.i.OnQuestAccepted.AddListener(DisplayUI);
-            QuestManager.i.OnQuestCompleted.AddListener(HideUI);
-            
-            HideUI();
         }
 
-        public void DisplayUI()
-        {
-            gameObject.SetActive(true);
-        }
-        
-        public void HideUI()
-        {
-            gameObject.SetActive(false);
-        }
+        // private void Start()
+        // {
+        //     // QuestManager.i.OnQuestAccepted.AddListener(DisplayUI);
+        //     // QuestManager.i.OnQuestCompleted.AddListener(HideUI);
+        //     
+        //     // HideUI();
+        // }
+
+        // public void DisplayUI()
+        // {
+        //     gameObject.SetActive(true);
+        // }
+        //
+        // public void HideUI()
+        // {
+        //     gameObject.SetActive(false);
+        // }
 
         public void UpdateObjectiveUI(string objectiveText)
         {
+            Debug.Log("");
             infoText.text = objectiveText;
         }
     }

@@ -39,7 +39,7 @@ namespace Vehicle
             PlayerHUD.i.SetupRoverUI(GetComponent<RoverStats>());
             
             this.player = player;
-            PlayerStats.i.OnEnter.Invoke();
+            PlayerStats.i.OnEnterRover.Invoke();
         }
 
         public void ExitRover()
@@ -54,7 +54,7 @@ namespace Vehicle
             PlayerHUD.i.DisableRoverUI();
             
             player = null;
-            PlayerStats.i.OnExit.Invoke();
+            PlayerStats.i.OnExitRover.Invoke();
         }
 
         public void SwitchController(float speed, GameObject player, GameObject controllerGameObject)
