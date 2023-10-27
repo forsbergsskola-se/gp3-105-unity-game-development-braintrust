@@ -11,6 +11,7 @@ namespace Quest
     public class QuestGiver : MonoBehaviour
     {
         public GameObject CreditPrefab;
+        public ParticleSystem heartEffect;
         
         private void Start()
         {
@@ -36,10 +37,12 @@ namespace Quest
             
             manager.AcceptQuest();
         }
-        [ContextMenu("CoinTest")]
+        [ContextMenu("CompleteQuest")]
         private void CompleteQuest()
         {
             GetComponent<QuestManager>().CompleteQuest();
+            
+            heartEffect.Play();
             StartCoroutine("SpitCredits");
         }
         
@@ -50,7 +53,8 @@ namespace Quest
                 float angle = Random.Range(0, 360) * Mathf.Deg2Rad;
                 float x = Mathf.Cos(angle);
                 float y = Mathf.Sin(angle);
-                float spitForce = Random.Range(100, 1000);
+                
+                float spitForce = Random.Range(85, 150);
                 GameObject credit = Instantiate(CreditPrefab, transform.position, quaternion.identity);
                 credit.GetComponent<Rigidbody2D>().AddForce(new Vector2(x,y) * spitForce);
                 yield return new WaitForSeconds(0.5f);

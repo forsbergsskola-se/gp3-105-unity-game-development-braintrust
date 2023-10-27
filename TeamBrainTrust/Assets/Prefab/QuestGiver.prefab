@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4779693014145530914}
   - component: {fileID: 2772024235301747328}
   - component: {fileID: 636513208377756208}
-  m_Layer: 0
-  m_Name: Particle System
+  m_Layer: 8
+  m_Name: Heart Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4843,7 +4843,7 @@ GameObject:
   - component: {fileID: 8112139334602716489}
   - component: {fileID: 620357638021533939}
   - component: {fileID: 3189805593198609221}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: QuestGiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4931,6 +4931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CreditPrefab: {fileID: 3884029261548221919, guid: 508e9f99580c8e840ac5190d3d313b32, type: 3}
+  heartEffect: {fileID: 2772024235301747328}
 --- !u!114 &9028380262793377779
 MonoBehaviour:
   m_ObjectHideFlags: 0
