@@ -4,6 +4,7 @@ using Player;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UI;
+using Unity.Mathematics;
 
 namespace Vehicle
 {
@@ -24,7 +25,7 @@ namespace Vehicle
             if(player != null)
                 PlayerHUD.i.roverHealthBar.UpdateUI(currentHealth);
             
-            DisplaySmoke();
+            DamageVisual();
         }
         
         public override void Death()
@@ -38,30 +39,32 @@ namespace Vehicle
             
             player.GetComponent<PlayerStats>().TakeDamage(explosiveDamage);
             GetComponent<RoverPilot>().ExitRover();
-            
+
+
+            Instantiate(roverDestroyedPrefab, transform.position, transform.rotation);
             
             Destroy(gameObject);
         }
 
 
-        void DisplaySmoke()
+        void DamageVisual()
         {
             
             float healthPercentage = (float)currentHealth / (float)maxHealth;
             Debug.Log(healthPercentage);
             
-            if (healthPercentage > 0.30f && healthPercentage <= 0.65f)
+            if (healthPercentage > 0.40f && healthPercentage <= 0.75f)
             {
                 lightSmoke.Play();
             }
-            else if (healthPercentage <= 0.30f)
+            else if (healthPercentage <= 0.40f)
             {
                 lightSmoke.Stop();
                 heavySmoke.Play();
                 
             }
 
-            if (healthPercentage <= 0.15f)
+            if (healthPercentage <= 0.20f)
             {
                 fire.Play();
             }
