@@ -48,11 +48,6 @@ namespace Quest
             PrepareQuest();
         }
 
-        private void Update()
-        {
-            Debug.Log(state.ToString());
-
-        }
 
         private void PrepareQuest()
         {
