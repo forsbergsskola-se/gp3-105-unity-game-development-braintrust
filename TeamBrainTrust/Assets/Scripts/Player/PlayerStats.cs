@@ -32,6 +32,16 @@ namespace Player
             PlayerHUD.i.playerHealthBar.UpdateUI(currentHealth);
         }
 
+        public void Heal(int healingPower)
+        {
+            currentHealth += healingPower;
+            
+            if (currentHealth > maxHealth)
+                currentHealth = maxHealth;
+            
+            PlayerHUD.i.playerHealthBar.UpdateUI(currentHealth);
+        }
+
         public override void Death()
         {
             base.Death();
