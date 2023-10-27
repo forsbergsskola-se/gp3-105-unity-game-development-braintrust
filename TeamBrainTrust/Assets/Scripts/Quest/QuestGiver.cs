@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using General;
-using Player;
-using UI;
+
 using Unity.Mathematics;
 using Random = UnityEngine.Random;
 
