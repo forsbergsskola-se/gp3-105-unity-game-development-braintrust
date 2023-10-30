@@ -8,7 +8,6 @@ namespace Enemies
     {
         public GameObject projectilePrefab;
         public float range;
-        public int damage;
         public float reloadTime;
         private float countdown;
 
