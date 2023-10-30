@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Mandels Scene.unity
+    guid: 6dc23755f9c3e4340ae846b10cfe5179
   m_configObjects: {}
