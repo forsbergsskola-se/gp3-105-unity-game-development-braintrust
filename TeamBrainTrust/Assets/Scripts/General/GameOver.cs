@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Player;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace General
 {
@@ -35,15 +36,16 @@ namespace General
         private IEnumerator RespawnCountdown()
         {
             respawnText.gameObject.SetActive(true);
-            respawnText.text = $"Respawning in {respawnCountdown}";
 
             while (respawnCountdown > 0)
             {
+                respawnText.text = $"Respawning in {respawnCountdown}";
                 yield return new WaitForSeconds(1);
                 
                 respawnCountdown--;
-                respawnText.text = $"Respawning in {respawnCountdown}";
             }
+
+            SceneManager.LoadScene("Mandels Scene");
         }
         
     }
