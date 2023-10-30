@@ -63,6 +63,7 @@ namespace Player
         public override void Death()
         {
             base.Death();
+            Destroy(gameObject);
         }
     }
 }
