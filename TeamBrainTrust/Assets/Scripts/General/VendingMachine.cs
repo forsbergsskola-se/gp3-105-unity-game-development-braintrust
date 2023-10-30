@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using General;
-
+using Player;
+using UI;
 using Unity.Mathematics;
 using Random = UnityEngine.Random;
 
@@ -21,8 +22,12 @@ namespace General
 
         private void OnInteraction(GameObject player)
         {
-            //Check if player credits >= cost
-            SpitConsumable();
+            if (player.GetComponent<PlayerStats>().creditCount >= cost)
+            {
+                SpitConsumable();
+                player.GetComponent<PlayerStats>().creditCount -= cost;
+                PlayerHUD.i.UpdateCredits();
+            }
         }
 
 
