@@ -1,6 +1,7 @@
 ﻿using System;
 using Player;
 using UnityEngine;
+using General;
 
 namespace Enemies
 {
@@ -27,10 +28,9 @@ namespace Enemies
         {
             Debug.Log(LayerMask.LayerToName(other.gameObject.layer));
             
-            if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("Rover"))
             {
-                
-                other.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+                other.gameObject.GetComponent<Stats>().TakeDamage(damage);
             }
             
             Destroy(gameObject);
