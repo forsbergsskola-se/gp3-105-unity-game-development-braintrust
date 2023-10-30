@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace General
 {
     public class Stats : MonoBehaviour
     {
+        [System.NonSerialized] public UnityEvent OnDeath = new UnityEvent();
+        
         public int maxHealth;
         [HideInInspector]public int currentHealth;
 
@@ -11,11 +14,7 @@ namespace General
         {
             currentHealth = maxHealth;
         }
-        [ContextMenu("testdamage")]
-        public void testdamage()
-        {
-            TakeDamage(1);
-        }
+
         public virtual void TakeDamage(int damage)
         {
             currentHealth -= damage;
@@ -27,7 +26,7 @@ namespace General
 
         public virtual void Death()
         {
-            
+            OnDeath.Invoke();
         }
     }
 }

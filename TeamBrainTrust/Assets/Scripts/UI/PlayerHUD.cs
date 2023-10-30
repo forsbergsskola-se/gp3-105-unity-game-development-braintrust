@@ -2,6 +2,7 @@
 using Player;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Vehicle;
 
 namespace UI
@@ -10,12 +11,10 @@ namespace UI
     {
         public static PlayerHUD i;
         
-        
         public HealthBar playerHealthBar;
         public HealthBar roverHealthBar;
         public GameObject roverHUD;
-        public TextMeshProUGUI currencyText;
-        public int currencyCount;
+        public TextMeshProUGUI creditsText;
 
         private void Awake()
         {
@@ -40,8 +39,7 @@ namespace UI
         
         public void UpdateCredits()
         {
-            currencyCount++;
-            currencyText.text = currencyCount.ToString();
+            creditsText.text = PlayerStats.i.creditCount.ToString();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Player;
 using TMPro;
 using UI;
 using UnityEngine;
@@ -12,7 +13,9 @@ namespace Items
         {
             if (IsCollectible(other.gameObject))
             {
+                other.gameObject.GetComponent<PlayerStats>().creditCount++;
                 PlayerHUD.i.UpdateCredits();
+                
                 Destroy(gameObject);
             }
         }
