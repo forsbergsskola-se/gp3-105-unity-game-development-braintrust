@@ -1,4 +1,5 @@
 ﻿using System;
+using Player;
 using UnityEngine;
 
 namespace Enemies
@@ -24,6 +25,14 @@ namespace Enemies
         
         private void OnCollisionEnter2D(Collision2D other)
         {
+            Debug.Log(LayerMask.LayerToName(other.gameObject.layer));
+            
+            if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                
+                other.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+            }
+            
             Destroy(gameObject);
         }
     }
