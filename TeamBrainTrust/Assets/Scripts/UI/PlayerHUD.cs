@@ -24,6 +24,8 @@ namespace UI
         private void Start()
         {
             playerHealthBar.SetupUI(PlayerStats.i.maxHealth, PlayerStats.i.currentHealth);
+            playerHealthBar.UpdateUI(PlayerStats.i.currentHealth);
+            UpdateCredits();
         }
 
         public void SetupRoverUI(RoverStats roverStats)

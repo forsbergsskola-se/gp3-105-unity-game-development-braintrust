@@ -25,17 +25,14 @@ namespace Player
         {
             base.Awake();
             i = this;
+            creditCount = PlayerPrefs.GetInt("Credits", creditCount);
+            currentHealth = PlayerPrefs.GetInt("PlayerHealth", currentHealth);
         }
 
         private void Start()
         {
             //FOR NOW
             PlayerPrefs.SetInt("PlayerHealth", maxHealth);
-            
-            creditCount = PlayerPrefs.GetInt("Credits", creditCount);
-            currentHealth = PlayerPrefs.GetInt("PlayerHealth", currentHealth);
-            PlayerHUD.i.playerHealthBar.UpdateUI(currentHealth);
-            
             QuestManager.i.OnQuestCompleted.AddListener(SaveStats);
         }
 
