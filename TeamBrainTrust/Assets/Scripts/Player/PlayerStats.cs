@@ -31,16 +31,18 @@ namespace Player
         {
             //FOR NOW
             PlayerPrefs.SetInt("PlayerHealth", maxHealth);
-
+            
+            creditCount = PlayerPrefs.GetInt("Credits", creditCount);
             currentHealth = PlayerPrefs.GetInt("PlayerHealth", currentHealth);
             PlayerHUD.i.playerHealthBar.UpdateUI(currentHealth);
             
-            QuestManager.i.OnQuestCompleted.AddListener(SaveCurrentHealth);
+            QuestManager.i.OnQuestCompleted.AddListener(SaveStats);
         }
 
-        private void SaveCurrentHealth()
+        private void SaveStats()
         {
             PlayerPrefs.SetInt("PlayerHealth", currentHealth);
+            PlayerPrefs.SetInt("Credits", creditCount);
         }
 
         public override void TakeDamage(int damage)
@@ -63,6 +65,8 @@ namespace Player
         public override void Death()
         {
             base.Death();
+            creditCount /= 2;
+            PlayerPrefs.SetInt("Credits", creditCount);
             Destroy(gameObject);
         }
     }
