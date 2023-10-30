@@ -54,8 +54,7 @@ MonoBehaviour:
   playerHealthBar: {fileID: 8291228171327361088}
   roverHealthBar: {fileID: 1884006025149388661}
   roverHUD: {fileID: 3326544984783010725}
-  currencyText: {fileID: 8685479366818019494}
-  currencyCount: 0
+  creditsText: {fileID: 8685479366818019494}
 --- !u!222 &3460601024811047578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1003,7 +1002,7 @@ GameObject:
   - component: {fileID: 5020018808181973984}
   - component: {fileID: 3516104603052965666}
   m_Layer: 5
-  m_Name: Currency
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1885,7 +1884,7 @@ GameObject:
   - component: {fileID: 792245657090065338}
   - component: {fileID: 3033583179728617846}
   m_Layer: 5
-  m_Name: Currency Icon
+  m_Name: Credits Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1997,7 +1996,7 @@ GameObject:
   - component: {fileID: 244053278022871321}
   - component: {fileID: 8685479366818019494}
   m_Layer: 5
-  m_Name: Currency Text
+  m_Name: Credits Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
