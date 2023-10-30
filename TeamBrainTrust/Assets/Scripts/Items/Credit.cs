@@ -13,7 +13,7 @@ namespace Items
         {
             if (IsCollectible(other.gameObject))
             {
-                other.gameObject.GetComponent<PlayerStats>().creditCount++;
+                PlayerStats.i.creditCount++;
                 PlayerHUD.i.UpdateCredits();
                 
                 Destroy(gameObject);
@@ -25,6 +25,7 @@ namespace Items
         {
             if (gameObject.layer == LayerMask.NameToLayer("Player"))
                 return true;
+            
             if (gameObject.layer == LayerMask.NameToLayer("Rover") &&
                 gameObject.GetComponent<RoverPilot>().isPlayerInRover)
                 return true;
