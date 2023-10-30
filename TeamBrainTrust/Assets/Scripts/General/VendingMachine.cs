@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using General;
 using Player;
@@ -27,6 +28,7 @@ namespace General
                 SpitConsumable();
                 player.GetComponent<PlayerStats>().creditCount -= cost;
                 PlayerHUD.i.UpdateCredits();
+                
             }
         }
 
@@ -40,6 +42,28 @@ namespace General
             float spitForce = Random.Range(spitForceInterval.x, spitForceInterval.y);
             GameObject credit = Instantiate(consumablePrefab, transform.position, quaternion.identity);
             credit.GetComponent<Rigidbody2D>().AddForce(new Vector2(x,y) * spitForce);
+        }
+
+        public void DisplayCost(bool display)
+        { 
+            Transform displayCost = gameObject.transform.GetChild(0);
+            displayCost.gameObject.SetActive(display);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                DisplayCost(true);
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+              DisplayCost(false);  
+            }
         }
     }
 }
