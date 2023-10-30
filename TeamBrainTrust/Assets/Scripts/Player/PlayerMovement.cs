@@ -21,6 +21,9 @@ namespace Player
         {
             xInput = Input.GetAxisRaw("Horizontal");
             yInput = Input.GetAxisRaw("Vertical");
+            
+            GetComponent<Animator>().SetInteger("Vertical Movement", (int)yInput);
+            GetComponent<Animator>().SetInteger("Horizontal Movement", (int)xInput);
         }
 
         private void FixedUpdate()
