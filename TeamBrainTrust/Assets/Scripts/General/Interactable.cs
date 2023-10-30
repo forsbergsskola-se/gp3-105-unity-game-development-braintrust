@@ -1,4 +1,5 @@
 ﻿using System;
+using General;
 using Player;
 using UnityEngine;
 using UnityEngine.Events;
@@ -32,6 +33,8 @@ namespace General
                 isPlayerInReach = true;
                 player = other.gameObject;
                 player.GetComponent<PlayerUI>().DisplayUI(true);
+               
+                
             }
         }
 
@@ -42,7 +45,12 @@ namespace General
                 isPlayerInReach = false;
                 isPlayerActive = true;
                 player.GetComponent<PlayerUI>().DisplayUI(false);
+                
+
+                
             }
         }
+        
+        
     }
 }
