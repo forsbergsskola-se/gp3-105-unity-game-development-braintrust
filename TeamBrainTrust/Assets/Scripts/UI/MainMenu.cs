@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace UI
 {
-    public class StartGame : MonoBehaviour
+    public class MainMenu : MonoBehaviour
     {
         public string targetSceneName;
         
@@ -11,5 +11,17 @@ namespace UI
         {
             SceneManager.LoadScene(targetSceneName);
         }
+        
+        public void EndGame()
+        {
+            Application.Quit();
+        }
+
+        public void OpenGameRules()
+        {
+            
+        }
     }
+    
+    
 }
