@@ -10,11 +10,12 @@ namespace Enemies
     {
         public GameObject projectilePrefab;
         public float reloadTime;
+        public float rotationDamping;
+        public Transform canonTransform;
+        
         private float countdown;
         private bool isPlayerInRange = false;
-        public Transform canonTransform;
         private GameObject target;
-        public float rotationDamping;
 
         private void Start()
         {
@@ -56,7 +57,7 @@ namespace Enemies
         {
             Vector3 targetLookPos = Quaternion.Euler(0, 0, 180) * (target.transform.position - transform.position);
             Quaternion rotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: targetLookPos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping); 
+            canonTransform.rotation = Quaternion.Slerp(canonTransform.rotation, rotation, Time.deltaTime * rotationDamping); 
         }
 
         private bool IsTowerActive()
@@ -71,7 +72,7 @@ namespace Enemies
 
         private void Shoot()
         {
-            Instantiate(projectilePrefab, transform.position, transform.rotation);
+            Instantiate(projectilePrefab, canonTransform.position, canonTransform.rotation);
         }
 
         
