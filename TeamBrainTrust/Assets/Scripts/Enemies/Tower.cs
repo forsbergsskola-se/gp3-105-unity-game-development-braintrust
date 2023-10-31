@@ -43,14 +43,14 @@ namespace Enemies
 
         private void Update()
         {
+            countdown -= Time.deltaTime;
+            
             if(!IsTowerActive())
             {
                 return;
             }
 
             RotateTowardsTarget();
-            
-            countdown -= Time.deltaTime;
             
             if (countdown <= 0)
             {
