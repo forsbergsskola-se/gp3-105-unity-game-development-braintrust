@@ -73,7 +73,20 @@ namespace Enemies
             {
                 return false;
             }
-    
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, target.transform.position - transform.position, 12, LayerMask.GetMask("Player", "Rover", "Default"));
+            
+            if (!hit)
+            {
+                return false;
+            }
+            
+            if (hit.collider.gameObject.layer != LayerMask.NameToLayer("Player") &&
+                hit.collider.gameObject.layer != LayerMask.NameToLayer("Rover"))
+            {
+                return false;
+            }
+            
             return true;
         }
 
@@ -115,7 +128,13 @@ namespace Enemies
 
             return false;
         }
-        
+
+        // private void OnDrawGizmos()
+        // {
+        //     if(target == null)
+        //         return;
+        //     Debug.DrawRay(transform.position, target.transform.position - transform.position);
+        // }
     }
     
 }
