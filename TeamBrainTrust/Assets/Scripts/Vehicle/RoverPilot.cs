@@ -23,14 +23,13 @@ namespace Vehicle
         {
             if (isPlayerInRover && Input.GetButtonDown("Interact"))
             {
-                Debug.Log("!");
                 ExitRover();
             }
         }
 
         public void EnterRover(GameObject player)
         {
-            if(player.GetComponent<PlayerStats>().itemInHand != null)
+            if(PlayerStats.i.itemInHand != null)
                 return;
             
             RoverMovement rm = GetComponent<RoverMovement>();
@@ -39,6 +38,7 @@ namespace Vehicle
             PlayerHUD.i.SetupRoverUI(GetComponent<RoverStats>());
             
             this.player = player;
+            PlayerStats.i.rover = this;
             PlayerStats.i.OnEnterRover.Invoke();
         }
 
