@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49a2b23658e407ca3066349cf43410b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: Mandels Scene
+  targetSceneName: Game Scene
 --- !u!1 &1456949111
 GameObject:
   m_ObjectHideFlags: 0
