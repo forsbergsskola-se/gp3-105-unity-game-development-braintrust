@@ -51,7 +51,6 @@ namespace Vehicle
         {
             
             float healthPercentage = (float)currentHealth / (float)maxHealth;
-            Debug.Log(healthPercentage);
             
             if (healthPercentage > 0.40f && healthPercentage <= 0.75f)
             {
