@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03923618618897743821e676f8adabd1
-      internalID: 235909574
+      spriteID: 0187b5a862160f249b8396614f82834b
+      internalID: -1053374865
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c2cd957575449045938828274cf851d
-      internalID: -285666759
+      spriteID: dfed7d1e37ca7564797c81e72a3bacdf
+      internalID: -1351067885
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 962c6f8cb2308904fb679ed75946f6eb
-      internalID: 1859872912
+      spriteID: e40a51528cd1c82459754dc51419b212
+      internalID: 867566294
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22d623fba9d2fce43b65a8404d8a2473
-      internalID: 1659412643
+      spriteID: 83d11fbc0f0b5b24b80f1ccbe77a4cb0
+      internalID: -37994663
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Path_Corner_0: 235909574
-      Path_Corner_1: -285666759
-      Path_Corner_2: 1859872912
-      Path_Corner_3: 1659412643
+      Path_Corner_0: -1053374865
+      Path_Corner_1: -1351067885
+      Path_Corner_2: 867566294
+      Path_Corner_3: -37994663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
