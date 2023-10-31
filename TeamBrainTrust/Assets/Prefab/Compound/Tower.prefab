@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4548185259636671629}
   - component: {fileID: 4720899482281660118}
   - component: {fileID: 6390198211414126919}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4065201619055796477}
   - component: {fileID: 5152548043832395660}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 3264903799695457885}
   - component: {fileID: 104753760480667608}
   - component: {fileID: 6669133511849530305}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}

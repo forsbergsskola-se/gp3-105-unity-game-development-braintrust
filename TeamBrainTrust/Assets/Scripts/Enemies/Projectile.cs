@@ -26,8 +26,6 @@ namespace Enemies
         
         private void OnCollisionEnter2D(Collision2D other)
         {
-            Debug.Log(LayerMask.LayerToName(other.gameObject.layer));
-            
             if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("Rover"))
             {
                 other.gameObject.GetComponent<Stats>().TakeDamage(damage);
