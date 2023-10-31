@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Player;
 using Unity.Mathematics;
 using UnityEngine;
@@ -9,13 +11,18 @@ namespace Enemies
     public class Tower : MonoBehaviour
     {
         public GameObject projectilePrefab;
+        public Transform canonTransform;
         public float reloadTime;
         public float rotationDamping;
-        public Transform canonTransform;
+
+        public float rapidFireInterval;
+        public int rapidFireAmount;
+        
         
         private float countdown;
         private bool isPlayerInRange = false;
         private GameObject target;
+        
 
         private void Start()
         {
@@ -47,7 +54,7 @@ namespace Enemies
             
             if (countdown <= 0)
             {
-                Shoot();
+                StartCoroutine("Shoot");
                 countdown = reloadTime;
 
             }
@@ -70,9 +77,13 @@ namespace Enemies
             return true;
         }
 
-        private void Shoot()
+        private IEnumerator Shoot()
         {
-            Instantiate(projectilePrefab, canonTransform.position, canonTransform.rotation);
+            for (int i = 0; i < rapidFireAmount; i++)
+            {
+                Instantiate(projectilePrefab, canonTransform.position, canonTransform.rotation);
+                yield return new WaitForSeconds(rapidFireInterval);
+            }
         }
 
         
