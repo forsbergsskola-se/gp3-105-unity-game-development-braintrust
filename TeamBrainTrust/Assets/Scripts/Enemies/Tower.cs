@@ -2,6 +2,7 @@
 using Player;
 using Unity.Mathematics;
 using UnityEngine;
+using Vehicle;
 
 namespace Enemies
 {
@@ -76,7 +77,7 @@ namespace Enemies
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("Rover"))
+            if (IsTargetable(other.gameObject))
             {
                 isPlayerInRange = true;
                 target = other.gameObject;
@@ -84,10 +85,23 @@ namespace Enemies
         }
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("Rover"))
+            if (IsTargetable(other.gameObject))
             {
                 isPlayerInRange = false;
             }
+        }
+        
+        
+        bool IsTargetable(GameObject gameObject)
+        {
+            if (gameObject.layer == LayerMask.NameToLayer("Player"))
+                return true;
+            
+            if (gameObject.layer == LayerMask.NameToLayer("Rover") &&
+                gameObject.GetComponent<RoverPilot>().isPlayerInRover)
+                return true;
+
+            return false;
         }
         
     }
