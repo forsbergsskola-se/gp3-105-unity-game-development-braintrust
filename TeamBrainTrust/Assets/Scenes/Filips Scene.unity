@@ -3277,7 +3277,7 @@ GameObject:
   - component: {fileID: 587124494}
   - component: {fileID: 587124495}
   m_Layer: 0
-  m_Name: CompoundNorth
+  m_Name: North Compound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -47,7 +47,7 @@ namespace General
                 respawnCountdown--;
             }
 
-            SceneManager.LoadScene("Mandels Scene");
+            SceneManager.LoadScene("Game Scene");
         }
         
     }

@@ -134,7 +134,7 @@ namespace Quest
         {
             if (state == State.EnterRover1)
             {
-                UpdateObjective("Get to the Compound");
+                UpdateObjective($"Get to the {compounds[questCompleteCount].gameObject.name} ");
                 SoundManager.PlaySound("Objective Complete");
                 compounds[questCompleteCount].SetIsObjective(true);
             }
