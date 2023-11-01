@@ -2,6 +2,7 @@ using System;
 using General;
 using Player;
 using Quest;
+using Systems.General;
 using UnityEngine;
 
 namespace Vehicle
@@ -28,6 +29,7 @@ namespace Vehicle
                     child.gameObject.SetActive(true);
                     Destroy(player.GetComponent<PlayerStats>().itemInHand.gameObject);
                     
+                    SoundManager.PlaySound("Place Crate");
                     QuestManager.i.LoadCrate();
                     
                     return;
@@ -35,7 +37,6 @@ namespace Vehicle
             }
             
         }
-        [ContextMenu("TestUnload")]
         public void UnloadCrateFromRover()
         {
             for (int i = 0; i < 4; i++)
