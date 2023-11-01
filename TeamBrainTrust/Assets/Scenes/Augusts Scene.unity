@@ -7257,131 +7257,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8798561315275446436, guid: 8e3a7dc6c997b407590edec446db92f9, type: 3}
   m_PrefabInstance: {fileID: 1641665584}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1642383405
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1642383407}
-  - component: {fileID: 1642383406}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1642383406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642383405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d4ddf026af46309b595aba4c6fff94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - soundName: Rover Driving
-    audioClip: {fileID: 8300000, guid: f865d3107a4c81d4ba0356e3e7241874, type: 3}
-    volume: 1
-    loop: 1
-    source: {fileID: 0}
-  - soundName: Rover Start
-    audioClip: {fileID: 8300000, guid: 7f5ac04abdf8fc54aa18bd79b3ff823a, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Rover Idle
-    audioClip: {fileID: 8300000, guid: a02531f3f62bfde4484c01ef07dc6bdc, type: 3}
-    volume: 1
-    loop: 1
-    source: {fileID: 0}
-  - soundName: Rover Impact
-    audioClip: {fileID: 8300000, guid: 76dbd5738194a144a8d268f81805941c, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Rover Door
-    audioClip: {fileID: 8300000, guid: 09da6297980428c4599e9ba56aae965f, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Objective Complete
-    audioClip: {fileID: 8300000, guid: 0c4fc0432ba5e4740b63ea584fa82197, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Quest Complete
-    audioClip: {fileID: 8300000, guid: fceb1070d715e484b85b818c874cb09d, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Credit
-    audioClip: {fileID: 8300000, guid: 338d6cf4ff1488e4f850be79b91a63d8, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Beep Boop
-    audioClip: {fileID: 8300000, guid: 88fb60efcfd9f404c9a8cbf44d864a16, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Tower Shoot
-    audioClip: {fileID: 8300000, guid: 63ec4ea266078a045bb395128466f45e, type: 3}
-    volume: 0.486
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Pick Up Crate
-    audioClip: {fileID: 8300000, guid: f005a4c670f8af9478c506865188eb0d, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Place Crate
-    audioClip: {fileID: 8300000, guid: 25c718fefe9ee1d489745dba7a8e01a7, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Death Ambience
-    audioClip: {fileID: 8300000, guid: a659e975eb9dc0247b96812ecb5745ae, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Player Take Damage
-    audioClip: {fileID: 8300000, guid: a5c69364521ab154e8f03a01f508a96a, type: 3}
-    volume: 0.65
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Main Menu Music
-    audioClip: {fileID: 8300000, guid: fce998982c074594ba72bbdcfd48545c, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - soundName: Spaceship Takeoff
-    audioClip: {fileID: 8300000, guid: 770661c7121dc6143805f488155d1c46, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
---- !u!4 &1642383407
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642383405}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1034.5422, y: 487.66165, z: -12.176501}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1647585093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10011,6 +9886,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7373126040337113491, guid: e0390715a350a72468543d1bd91f2502, type: 3}
   m_PrefabInstance: {fileID: 2325255848501294421}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4161057286378450753
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6521628936769097601, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1034.5422
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521628936769097601, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 487.66165
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521628936769097601, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.176501
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521628936769097601, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521628936769097601, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521628936769097601, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521628936769097601, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521628936769097601, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521628936769097601, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521628936769097601, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123741011599159670, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94f2b410b3388a04bbd5cb414349c819, type: 3}
 --- !u!1001 &4657426940840087542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10335,4 +10267,4 @@ SceneRoots:
   - {fileID: 566336533}
   - {fileID: 6348132819707607572}
   - {fileID: 1843643694}
-  - {fileID: 1642383407}
+  - {fileID: 4161057286378450753}
