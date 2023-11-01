@@ -1,6 +1,7 @@
 ﻿using System;
 using General;
 using Player;
+using Systems.General;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UI;
@@ -21,9 +22,12 @@ namespace Vehicle
             base.TakeDamage(damage);
             
             GameObject player = GetComponent<RoverPilot>().player;
-            
-            if(player != null)
+
+            if (player != null)
+            {
                 PlayerHUD.i.roverHealthBar.UpdateUI(currentHealth);
+                SoundManager.PlaySound("Rover Impact");
+            }
             
             DamageVisual();
         }
@@ -39,8 +43,7 @@ namespace Vehicle
             
             player.GetComponent<PlayerStats>().TakeDamage(explosiveDamage);
             GetComponent<RoverPilot>().ExitRover();
-
-
+            
             Instantiate(roverDestroyedPrefab, transform.position, transform.rotation);
             
             Destroy(gameObject);
@@ -49,7 +52,6 @@ namespace Vehicle
 
         void DamageVisual()
         {
-            
             float healthPercentage = (float)currentHealth / (float)maxHealth;
             
             if (healthPercentage > 0.40f && healthPercentage <= 0.75f)
@@ -60,16 +62,12 @@ namespace Vehicle
             {
                 lightSmoke.Stop();
                 heavySmoke.Play();
-                
             }
 
             if (healthPercentage <= 0.20f)
             {
                 fire.Play();
             }
-            
-            
-            
         }
     }
 }
