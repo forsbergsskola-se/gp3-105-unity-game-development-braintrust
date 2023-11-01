@@ -247,8 +247,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1853056811}
   - {fileID: 2006978723}
+  - {fileID: 1853056811}
   m_Father: {fileID: 957617804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -353,7 +353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -297.4, y: 34.6}
+  m_AnchoredPosition: {x: -308.3, y: 34.6}
   m_SizeDelta: {x: 180, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1853056812
@@ -403,8 +403,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 2006978725}
   - component: {fileID: 2006978724}
   m_Layer: 5
-  m_Name: Image
+  m_Name: WinScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,8 +487,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.4, y: 0}
-  m_SizeDelta: {x: 280, y: 155}
+  m_AnchoredPosition: {x: 1.4, y: -3.2}
+  m_SizeDelta: {x: 295, y: 155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2006978724
 MonoBehaviour:
