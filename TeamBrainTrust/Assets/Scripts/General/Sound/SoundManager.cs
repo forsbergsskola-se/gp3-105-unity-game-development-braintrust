@@ -54,11 +54,13 @@ namespace Systems.General
 
             if (sound != null)
             {
+                sound.source.Stop();
                 sound.source.Play();
                 return;
             }
             if(soundAlt != null)
             {
+                soundAlt.source.Stop();
                 soundAlt.source.Play();
                 return;
             }

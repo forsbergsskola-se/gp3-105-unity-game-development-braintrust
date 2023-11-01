@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8123741011599159670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6521628936769097601}
+  - component: {fileID: 2286696500729184410}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6521628936769097601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123741011599159670}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1034.5422, y: 487.66165, z: -12.176501}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2286696500729184410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123741011599159670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d4ddf026af46309b595aba4c6fff94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundName: Rover Driving
+    audioClip: {fileID: 8300000, guid: f865d3107a4c81d4ba0356e3e7241874, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - soundName: Rover Start
+    audioClip: {fileID: 8300000, guid: 7f5ac04abdf8fc54aa18bd79b3ff823a, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Rover Idle
+    audioClip: {fileID: 8300000, guid: a02531f3f62bfde4484c01ef07dc6bdc, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - soundName: Rover Impact
+    audioClip: {fileID: 8300000, guid: 76dbd5738194a144a8d268f81805941c, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Rover Door
+    audioClip: {fileID: 8300000, guid: 09da6297980428c4599e9ba56aae965f, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Objective Complete
+    audioClip: {fileID: 8300000, guid: 0c4fc0432ba5e4740b63ea584fa82197, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Quest Complete
+    audioClip: {fileID: 8300000, guid: fceb1070d715e484b85b818c874cb09d, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Credit
+    audioClip: {fileID: 8300000, guid: 338d6cf4ff1488e4f850be79b91a63d8, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Beep Boop
+    audioClip: {fileID: 8300000, guid: 88fb60efcfd9f404c9a8cbf44d864a16, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Tower Shoot
+    audioClip: {fileID: 8300000, guid: 63ec4ea266078a045bb395128466f45e, type: 3}
+    volume: 0.486
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Pick Up Crate
+    audioClip: {fileID: 8300000, guid: f005a4c670f8af9478c506865188eb0d, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Place Crate
+    audioClip: {fileID: 8300000, guid: 25c718fefe9ee1d489745dba7a8e01a7, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Death Ambience
+    audioClip: {fileID: 8300000, guid: a659e975eb9dc0247b96812ecb5745ae, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Player Take Damage
+    audioClip: {fileID: 8300000, guid: a5c69364521ab154e8f03a01f508a96a, type: 3}
+    volume: 0.65
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Main Menu Music
+    audioClip: {fileID: 8300000, guid: fce998982c074594ba72bbdcfd48545c, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Spaceship Takeoff
+    audioClip: {fileID: 8300000, guid: 770661c7121dc6143805f488155d1c46, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
