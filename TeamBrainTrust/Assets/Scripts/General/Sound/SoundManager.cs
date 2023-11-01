@@ -47,22 +47,22 @@ namespace Systems.General
         // }
 
 
-        void GetSound(string soundName)
+        Sound GetSound(string soundName)
         {
             Sound sound = Array.Find(sounds, sound => sound.soundName == soundName);
             Sound soundAlt = Array.Find(sounds, sound => sound.audioClip.name == soundName);
 
             if (sound != null)
             {
-                sound.source.Stop();
-                sound.source.Play();
-                return;
+                // sound.source.Stop();
+                // sound.source.Play();
+                return sound;
             }
             if(soundAlt != null)
             {
-                soundAlt.source.Stop();
-                soundAlt.source.Play();
-                return;
+                // soundAlt.source.Stop();
+                // soundAlt.source.Play();
+                return soundAlt;
             }
     
             Debug.Log("Can't Find: " + soundName);
@@ -71,7 +71,15 @@ namespace Systems.General
 
         public static void PlaySound(string soundName)
         {
-            i.GetSound(soundName);
+            Sound sound = i.GetSound(soundName);
+            sound.source.Stop();
+            sound.source.Play();
+        }
+        
+        public static void StopSound(string soundName)
+        {
+            Sound sound = i.GetSound(soundName);
+            sound.source.Stop();
         }
 
     }
