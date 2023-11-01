@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Player;
+using Systems.General;
 using Unity.Mathematics;
 using UnityEngine;
 using Vehicle;
@@ -95,6 +96,8 @@ namespace Enemies
             for (int i = 0; i < rapidFireAmount; i++)
             {
                 Instantiate(projectilePrefab, canonTransform.position, canonTransform.rotation);
+                SoundManager.PlaySound("Tower Shoot");
+                
                 yield return new WaitForSeconds(rapidFireInterval);
             }
         }
