@@ -66,12 +66,16 @@ namespace Systems.General
             }
     
             Debug.Log("Can't Find: " + soundName);
+            return null;
         }
 
 
         public static void PlaySound(string soundName)
         {
             Sound sound = i.GetSound(soundName);
+            
+            if(sound == null)
+                return;
             sound.source.Stop();
             sound.source.Play();
         }
@@ -79,6 +83,8 @@ namespace Systems.General
         public static void StopSound(string soundName)
         {
             Sound sound = i.GetSound(soundName);
+            if(sound == null)
+                return;
             sound.source.Stop();
         }
 
