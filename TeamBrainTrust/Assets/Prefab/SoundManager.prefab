@@ -71,7 +71,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - soundName: Objective Complete
-    audioClip: {fileID: 8300000, guid: 0c4fc0432ba5e4740b63ea584fa82197, type: 3}
+    audioClip: {fileID: 8300000, guid: 29573c0c13f2aaf4499b4deccccf17ba, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
@@ -81,7 +81,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - soundName: Credit
-    audioClip: {fileID: 8300000, guid: 338d6cf4ff1488e4f850be79b91a63d8, type: 3}
+    audioClip: {fileID: 8300000, guid: 47cf6c80657cbde4e9e09214c15cf36a, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}

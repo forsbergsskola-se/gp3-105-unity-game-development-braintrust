@@ -11,8 +11,6 @@ namespace Vehicle
             int damage = (int)GetComponent<RoverMovement>().currentSpeed;
             damage = Mathf.Abs(damage);
             
-            SoundManager.PlaySound("Rover Impact");
-            
             GetComponent<RoverStats>().TakeDamage(damage);
             GetComponent<RoverMovement>().currentSpeed = 0;
         }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Player;
+using Systems.General;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,6 +25,7 @@ namespace General
         {
             StartCoroutine("CountdownDelay");
             gameoverText.gameObject.SetActive(true);
+            SoundManager.PlaySound("Death Ambience");
         }
 
         private IEnumerator CountdownDelay()
