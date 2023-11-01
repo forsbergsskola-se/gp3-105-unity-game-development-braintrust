@@ -33,7 +33,8 @@ namespace Quest
             ExitRover1, //EXIT ROVER
             LoadCrates, //LOAD CRATES X/4
             EnterRover2, //ENTER ROVER
-            CompleteQuest //RETURN TO QUESTGIVER WITH CRATES
+            // RETURN TO QUESTGIVER WITH CRATES, IF ROVER BREAKS, GET A NEW ONE AND REPEAT LOAD CRATES
+            CompleteQuest // GET REWARD
         }
         
         private void Awake()
@@ -144,7 +145,5 @@ namespace Quest
                 SoundManager.PlaySound("Objective Complete");
             }
         }
-
     }
-    
 }
