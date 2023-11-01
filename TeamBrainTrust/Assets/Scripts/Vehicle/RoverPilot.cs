@@ -55,6 +55,7 @@ namespace Vehicle
             SwitchController(pm.speed, player, player); //Switch from controlling the rover to controlling the player
             
             SoundManager.StopSound("Rover Idle");
+            SoundManager.PlaySound("Rover Door");
             
             player.transform.position = transform.position + new Vector3(1, 0, 0);
             PlayerHUD.i.DisableRoverUI();
