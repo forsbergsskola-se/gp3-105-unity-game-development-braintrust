@@ -156,6 +156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 278970889}
     m_Modifications:
+    - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
       value: Compound Wall Vertical (12)
@@ -1185,7 +1189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
@@ -1246,7 +1250,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
@@ -2777,6 +2781,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 278970889}
     m_Modifications:
+    - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
       value: Compound Wall Vertical (9)
@@ -3084,7 +3092,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
@@ -3207,7 +3215,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
@@ -3878,6 +3886,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 278970889}
     m_Modifications:
+    - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
       value: Compound Wall Vertical (14)
@@ -3935,6 +3947,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 278970889}
     m_Modifications:
+    - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
       value: Compound Wall Vertical (13)
@@ -5793,7 +5809,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
@@ -6269,7 +6285,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
@@ -6411,6 +6427,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 278970889}
     m_Modifications:
+    - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
       value: Compound Wall Vertical (4)
@@ -6961,7 +6981,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
@@ -7174,6 +7194,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 278970889}
     m_Modifications:
+    - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
       value: Compound Wall Vertical (8)
@@ -7420,7 +7444,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
@@ -7975,6 +7999,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 278970889}
     m_Modifications:
+    - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
       value: Compound Wall Vertical (33)
@@ -8353,7 +8381,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
@@ -8605,7 +8633,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
@@ -8698,7 +8726,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284511281151303981, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_SortingOrder
-      value: -4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1562975671146673056, guid: 90ea68fe596ad40e7801571cf3d33603, type: 3}
       propertyPath: m_Name
