@@ -2,6 +2,7 @@
 using UnityEngine;
 using Compounds;
 using Player;
+using Systems.General;
 using UI;
 using UnityEngine.Events;
 using UnityEngine.PlayerLoop;
@@ -68,6 +69,7 @@ namespace Quest
             cratesLoaded = 0;
 
             UpdateObjective("Enter Rover");
+            SoundManager.PlaySound("Objective Complete");
             
             OnQuestAccepted.Invoke();
         }
@@ -76,6 +78,7 @@ namespace Quest
         {
             if(state == State.EnterCompound)
                 UpdateObjective("Exit Rover");
+            SoundManager.PlaySound("Objective Complete");
         }
 
 
@@ -83,6 +86,7 @@ namespace Quest
         {
             cratesLoaded++;
             UpdateObjective(@$"Load crates ({cratesLoaded} / {cratesRequired})");
+            SoundManager.PlaySound("Objective Complete");
             
             if (cratesLoaded == cratesRequired) //When all crates are loaded the quest is completed and ready to hand in to quest giver
                 ObjectiveCompleted();
@@ -92,6 +96,7 @@ namespace Quest
         {
             isObjectiveCompleted = true;
             UpdateObjective("Return crates to Beep Boop");
+            SoundManager.PlaySound("Objective Complete");
         }
         
 
@@ -121,6 +126,7 @@ namespace Quest
             if (state == State.ExitRover1)
             {
                 UpdateObjective(@$"Load crates ({cratesLoaded} / {cratesRequired})");
+                SoundManager.PlaySound("Objective Complete");
             }
         }
 
@@ -129,11 +135,13 @@ namespace Quest
             if (state == State.EnterRover1)
             {
                 UpdateObjective("Get to the Compound");
+                SoundManager.PlaySound("Objective Complete");
                 compounds[questCompleteCount].SetIsObjective(true);
             }
             else if(state == State.EnterRover2)
             {
                 UpdateObjective("Return to Beep Boop with crates");
+                SoundManager.PlaySound("Objective Complete");
             }
         }
 
