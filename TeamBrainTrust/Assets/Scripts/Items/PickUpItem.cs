@@ -1,6 +1,7 @@
 ﻿using System;
 using General;
 using Player;
+using Systems.General;
 using UnityEngine;
 
 namespace Items
@@ -17,6 +18,7 @@ namespace Items
             if(player.GetComponent<PlayerStats>().itemInHand != null)
                 return;
             
+            SoundManager.PlaySound("Pick Up Crate");
             transform.parent = player.transform;
             transform.localPosition = new Vector3(0, -0.35f, 0);
 

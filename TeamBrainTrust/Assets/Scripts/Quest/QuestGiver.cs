@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using General;
-
+using Systems.General;
 using Unity.Mathematics;
 using Random = UnityEngine.Random;
 
@@ -42,6 +42,7 @@ namespace Quest
             GetComponent<QuestManager>().CompleteQuest();
             
             heartEffect.Play();
+            SoundManager.PlaySound("Quest Complete");
             StartCoroutine("SpitCredits");
         }
         
