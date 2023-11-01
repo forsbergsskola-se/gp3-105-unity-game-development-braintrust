@@ -54,7 +54,7 @@ namespace Quest
 
         private void PrepareQuest()
         {
-            UpdateObjective("Speak to Beep Boop to Receive a Quest");
+            UpdateObjective("Speak to B33P B00P to Receive a Quest");
             state = State.NoQuest;
         }
         
@@ -95,7 +95,7 @@ namespace Quest
         public void ObjectiveCompleted()
         {
             isObjectiveCompleted = true;
-            UpdateObjective("Return crates to Beep Boop");
+            UpdateObjective("Return crates to B33P B00P");
             SoundManager.PlaySound("Objective Complete");
         }
         
@@ -140,7 +140,7 @@ namespace Quest
             }
             else if(state == State.EnterRover2)
             {
-                UpdateObjective("Return to Beep Boop with crates");
+                UpdateObjective("Return to B33P B00P with crates");
                 SoundManager.PlaySound("Objective Complete");
             }
         }
