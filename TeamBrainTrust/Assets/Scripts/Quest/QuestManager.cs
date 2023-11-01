@@ -47,7 +47,7 @@ namespace Quest
             PlayerStats.i.OnExitRover.AddListener(OnExitRover);
             
             questCompleteCount = PlayerPrefs.GetInt("QuestCompleteCount", questCompleteCount);
-            
+            questCompleteCount = 0;
             PrepareQuest();
         }
 
