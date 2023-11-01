@@ -1,5 +1,6 @@
 ﻿using System;
 using Player;
+using Systems.General;
 using TMPro;
 using UI;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace Items
             {
                 PlayerStats.i.creditCount++;
                 PlayerHUD.i.UpdateCredits();
-                
+                SoundManager.PlaySound("Credit");
                 Destroy(gameObject);
             }
         }
