@@ -26,7 +26,6 @@ namespace Vehicle
             {
                 DriveInput();
                 Turn();
-                SoundManager.PlaySound("Rover Driving");
             }
             else
             {
