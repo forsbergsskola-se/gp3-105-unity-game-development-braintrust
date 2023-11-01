@@ -37,6 +37,7 @@ namespace Vehicle
             SwitchController(rm.maxSpeed, player, gameObject);  //Switch from controlling the player to controlling the rover
             
             SoundManager.PlaySound("Rover Start");
+            SoundManager.PlaySound("Rover Idle");
             
             PlayerHUD.i.SetupRoverUI(GetComponent<RoverStats>());
             
