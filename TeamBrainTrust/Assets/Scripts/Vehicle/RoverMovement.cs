@@ -1,4 +1,5 @@
 ﻿using System;
+using Systems.General;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Vector2 = System.Numerics.Vector2;
@@ -25,7 +26,7 @@ namespace Vehicle
             {
                 DriveInput();
                 Turn();
-            
+                SoundManager.PlaySound("Rover Driving");
             }
             else
             {

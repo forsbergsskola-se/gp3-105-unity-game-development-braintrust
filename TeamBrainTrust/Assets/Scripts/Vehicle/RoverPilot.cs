@@ -1,6 +1,7 @@
 ﻿using System;
 using General;
 using Player;
+using Systems.General;
 using UI;
 using Unity.Mathematics;
 using UnityEngine;
@@ -34,7 +35,9 @@ namespace Vehicle
             
             RoverMovement rm = GetComponent<RoverMovement>();
             SwitchController(rm.maxSpeed, player, gameObject);  //Switch from controlling the player to controlling the rover
-
+            
+            SoundManager.PlaySound("Rover Start");
+            
             PlayerHUD.i.SetupRoverUI(GetComponent<RoverStats>());
             
             this.player = player;
