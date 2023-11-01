@@ -2,6 +2,7 @@
 using General;
 using Items;
 using Quest;
+using Systems.General;
 using UI;
 using UnityEngine;
 using UnityEngine.Events;
@@ -46,6 +47,7 @@ namespace Player
         {
             base.TakeDamage(damage);
             PlayerHUD.i.playerHealthBar.UpdateUI(currentHealth);
+            SoundManager.PlaySound("Player Take Damage");
         }
 
         public void Heal(int healingPower)
