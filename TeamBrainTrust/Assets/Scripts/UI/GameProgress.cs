@@ -7,6 +7,7 @@ namespace UI
     public class GameProgress : MonoBehaviour
     {
         public int progressValue;
+        
 
         private void Start()
         {

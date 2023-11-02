@@ -15,7 +15,8 @@ namespace Quest
         
         [HideInInspector] public UnityEvent OnQuestAccepted = new UnityEvent();
         [HideInInspector] public UnityEvent OnQuestCompleted = new UnityEvent();
-        
+        [HideInInspector] public UnityEvent OnSpaceShipRepaired = new UnityEvent();
+
         
         public Compound[] compounds;
         [HideInInspector] public int cratesLoaded;
@@ -55,8 +56,16 @@ namespace Quest
 
         private void PrepareQuest()
         {
-            UpdateObjective("Speak to B33P B00P to Receive a Quest");
             state = State.NoQuest;
+
+            if (questCompleteCount == 4)
+            {
+                UpdateObjective("Enter Spaceship to return to Earth");
+                OnSpaceShipRepaired.Invoke();
+                return;
+            }
+            
+            UpdateObjective("Speak to B33P B00P to Receive a Quest");
         }
         
 
