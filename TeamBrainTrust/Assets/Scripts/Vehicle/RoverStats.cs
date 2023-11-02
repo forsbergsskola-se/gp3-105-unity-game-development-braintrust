@@ -55,7 +55,7 @@ namespace Vehicle
                 QuestManager.i.RoverDestroy();
                 
                 if(cratesTransform.GetChild(i).gameObject.activeSelf)
-                    Instantiate(cratePrefab, transform.position + new Vector3(0, i * 0.5f, 0), Quaternion.identity);
+                    Instantiate(cratePrefab, transform.position + new Vector3(0, (i * 0.5f) - 0.75f , 0), Quaternion.identity);
             }
             
             

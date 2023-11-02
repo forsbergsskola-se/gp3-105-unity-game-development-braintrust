@@ -57,6 +57,10 @@ namespace Items
             SoundManager.PlaySound("Pick Up Crate");
             transform.parent = player.transform;
             transform.localPosition = new Vector3(0, -0.35f, 0);
+            GetComponent<SpriteRenderer>().sortingOrder = 11;
+
+
+            GetComponent<BoxCollider2D>().enabled = false;
 
             player.GetComponent<PlayerStats>().itemInHand = this;
         }

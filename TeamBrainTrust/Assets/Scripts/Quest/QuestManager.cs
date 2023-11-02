@@ -163,6 +163,7 @@ namespace Quest
             cratesLoaded = 0;
             UpdateObjective(@$"Load crates ({cratesLoaded} / {cratesRequired})");
             state = State.LoadCrates;
+            isObjectiveCompleted = false;
         }
     }
 }
