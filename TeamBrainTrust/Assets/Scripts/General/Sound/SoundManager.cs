@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Systems.General
 {
     public class SoundManager : MonoBehaviour
     {
     
-        public static float soundVolume = 0.5f;
-        public static float musicVolume = 0.5f;
+        public static float soundVolume = 1f;
         static SoundManager i;
         public Sound[] sounds;
 
@@ -24,11 +24,18 @@ namespace Systems.General
                 sound.source.volume = sound.volume * soundVolume;
                 sound.source.loop = sound.loop;
 
-
-                if (sound.soundName == "Ambience" || sound.soundName == "Main_Menu")
-                    sound.source.volume = sound.volume * musicVolume;
+                
+                
+                // if (sound.soundName == "Ambience" || sound.soundName == "Main_Menu")
+                //     sound.source.volume = sound.volume * musicVolume;
             }
 
+        }
+
+        private void Start()
+        {
+            if(SceneManager.GetActiveScene().name == "Game Scene")
+                SoundManager.PlaySound("Game Music");
         }
 
         // public void ChangeValue()
