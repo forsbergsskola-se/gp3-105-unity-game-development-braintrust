@@ -34,7 +34,6 @@ namespace Quest
             ExitRover1, //EXIT ROVER
             LoadCrates, //LOAD CRATES X/4
             EnterRover2, //ENTER ROVER
-            // RETURN TO QUESTGIVER WITH CRATES, IF ROVER BREAKS, GET A NEW ONE AND REPEAT LOAD CRATES
             CompleteQuest // GET REWARD
         }
         
@@ -49,7 +48,6 @@ namespace Quest
             PlayerStats.i.OnExitRover.AddListener(OnExitRover);
             
             questCompleteCount = PlayerPrefs.GetInt("QuestCompleteCount", questCompleteCount);
-            questCompleteCount = 0;
             PrepareQuest();
         }
 
@@ -78,7 +76,10 @@ namespace Quest
             cratesRequired = 4;
             isObjectiveCompleted = false;
             cratesLoaded = 0;
-
+            
+            PlayerPrefs.SetInt("Credits", PlayerStats.i.creditCount);
+            PlayerPrefs.SetInt("PlayerHealth", PlayerStats.i.currentHealth);
+            
             UpdateObjective("Enter Rover");
             SoundManager.PlaySound("Objective Complete");
             

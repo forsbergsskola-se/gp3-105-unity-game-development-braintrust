@@ -32,10 +32,7 @@ namespace Player
 
         private void Start()
         {
-            //FOR NOW
-            PlayerPrefs.SetInt("PlayerHealth", maxHealth);
             QuestManager.i.OnQuestCompleted.AddListener(SaveStats);
-
         }
 
         private void SaveStats()

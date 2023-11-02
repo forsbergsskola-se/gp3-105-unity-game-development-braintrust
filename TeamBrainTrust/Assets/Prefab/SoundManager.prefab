@@ -115,18 +115,23 @@ MonoBehaviour:
     volume: 0.4
     loop: 0
     source: {fileID: 0}
-  - soundName: Main Menu Music
-    audioClip: {fileID: 8300000, guid: fce998982c074594ba72bbdcfd48545c, type: 3}
-    volume: 0.6
-    loop: 0
-    source: {fileID: 0}
   - soundName: Spaceship Takeoff
     audioClip: {fileID: 8300000, guid: 770661c7121dc6143805f488155d1c46, type: 3}
-    volume: 1
+    volume: 0.7
     loop: 0
+    source: {fileID: 0}
+  - soundName: Main Menu Music
+    audioClip: {fileID: 8300000, guid: dc30d40c2e841aa4e85ff124f8d2b702, type: 3}
+    volume: 0.6
+    loop: 1
     source: {fileID: 0}
   - soundName: Game Music
     audioClip: {fileID: 8300000, guid: 62d98fcd7cefa90478bbe25b14a85803, type: 3}
+    volume: 0.6
+    loop: 1
+    source: {fileID: 0}
+  - soundName: Win Scene Music
+    audioClip: {fileID: 8300000, guid: aae70e69bd204bc43859944331b57ef5, type: 3}
     volume: 0.6
     loop: 1
     source: {fileID: 0}

@@ -7,8 +7,8 @@ namespace UI
     {
         private void Start()
         {
-            //Play Win Music
-            //SoundManager.PlaySound("Main Menu Music");
+            SoundManager.PlaySound("Win Scene Music");
+            PlayerPrefs.DeleteAll();
         }
         
         public void EndGame()
