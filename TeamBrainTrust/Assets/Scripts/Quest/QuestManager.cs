@@ -56,16 +56,17 @@ namespace Quest
 
         private void PrepareQuest()
         {
-            state = State.NoQuest;
-
             if (questCompleteCount == 4)
             {
                 UpdateObjective("Enter Spaceship to return to Earth");
+                state = State.NoQuest;
+                
                 OnSpaceShipRepaired.Invoke();
                 return;
             }
             
             UpdateObjective("Speak to B33P B00P to Receive a Quest");
+            state = State.NoQuest;
         }
         
 
@@ -96,6 +97,7 @@ namespace Quest
         {
             cratesLoaded++;
             UpdateObjective(@$"Load crates ({cratesLoaded} / {cratesRequired})");
+
             SoundManager.PlaySound("Objective Complete");
             
             if (cratesLoaded == cratesRequired) //When all crates are loaded the quest is completed and ready to hand in to quest giver
@@ -153,6 +155,13 @@ namespace Quest
                 UpdateObjective("Return to B33P B00P with crates");
                 SoundManager.PlaySound("Objective Complete");
             }
+        }
+
+        public void RoverDestroy()
+        {
+            cratesLoaded = 0;
+            UpdateObjective(@$"Load crates ({cratesLoaded} / {cratesRequired})");
+            state = State.LoadCrates;
         }
     }
 }

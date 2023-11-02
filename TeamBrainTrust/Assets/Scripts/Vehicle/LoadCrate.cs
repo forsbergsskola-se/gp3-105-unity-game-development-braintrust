@@ -9,6 +9,8 @@ namespace Vehicle
 {
     public class LoadCrate : MonoBehaviour
     {
+        public Transform cratesTransform;
+        
         private void Start()
         {
             GetComponent<Interactable>().onInteraction.AddListener(LoadCrateOnRover);
@@ -22,7 +24,7 @@ namespace Vehicle
             
             for (int i = 0; i < 4; i++)
             {
-                Transform child = gameObject.transform.GetChild(i);
+                Transform child = cratesTransform.GetChild(i);
 
                 if (!child.gameObject.activeSelf)
                 {
