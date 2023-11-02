@@ -6,6 +6,7 @@ namespace UI
     public class MainMenu : MonoBehaviour
     {
         public string targetSceneName;
+        public Transform gameRulesTransform;
         
         public void LoadScene()
         {
@@ -19,7 +20,14 @@ namespace UI
 
         public void OpenGameRules()
         {
-            
+            gameRulesTransform.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
+
+        public void CloseGameRules()
+        {
+            gameRulesTransform.gameObject.SetActive(false);
+            gameObject.SetActive(true);
         }
     }
     

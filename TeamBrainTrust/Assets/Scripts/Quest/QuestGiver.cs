@@ -57,7 +57,7 @@ namespace Quest
                 float spitForce = Random.Range(85, 150);
                 GameObject credit = Instantiate(CreditPrefab, transform.position, quaternion.identity);
                 credit.GetComponent<Rigidbody2D>().AddForce(new Vector2(x,y) * spitForce);
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.35f);
             }
         }
     }
