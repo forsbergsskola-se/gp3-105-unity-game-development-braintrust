@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using General;
 using Player;
 using Systems.General;
@@ -15,6 +16,8 @@ namespace Vehicle
         public bool isPlayerInRover;
         public GameObject player;
 
+        private bool canExitRover;
+
         private void Start()
         {
             GetComponent<Interactable>().onInteraction.AddListener(EnterRover);
@@ -22,7 +25,7 @@ namespace Vehicle
 
         private void Update()
         {
-            if (isPlayerInRover && Input.GetButtonDown("Interact"))
+            if (isPlayerInRover && Input.GetButtonDown("Interact") && canExitRover)
             {
                 ExitRover();
             }
@@ -44,6 +47,8 @@ namespace Vehicle
             this.player = player;
             PlayerStats.i.rover = this;
             PlayerStats.i.OnEnterRover.Invoke();
+
+            StartCoroutine("CanExitRover");
         }
 
         public void ExitRover()
@@ -61,6 +66,7 @@ namespace Vehicle
             PlayerHUD.i.DisableRoverUI();
             
             player = null;
+            canExitRover = false;
             PlayerStats.i.OnExitRover.Invoke();
         }
 
@@ -70,6 +76,13 @@ namespace Vehicle
             
             player.SetActive(!player.activeSelf);
             isPlayerInRover = !isPlayerInRover;
+        }
+
+        private IEnumerator CanExitRover()
+        {
+            yield return new WaitForSeconds(0.5f);
+
+            canExitRover = true;
         }
     }
 }
