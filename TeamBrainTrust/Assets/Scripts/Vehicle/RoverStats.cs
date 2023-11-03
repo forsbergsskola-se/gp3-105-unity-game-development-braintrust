@@ -50,12 +50,15 @@ namespace Vehicle
             
             Instantiate(roverDestroyedPrefab, transform.position, transform.rotation);
 
-            for (int i = 0; i < cratesTransform.childCount; i++)
+            if (QuestManager.i.cratesLoaded > 0)
             {
-                QuestManager.i.RoverDestroy();
-                
-                if(cratesTransform.GetChild(i).gameObject.activeSelf)
-                    Instantiate(cratePrefab, transform.position + new Vector3(0, (i * 0.5f) - 0.75f , 0), Quaternion.identity);
+                for (int i = 0; i < cratesTransform.childCount; i++)
+                {
+                    QuestManager.i.RoverDestroy();
+                    
+                    if(cratesTransform.GetChild(i).gameObject.activeSelf)
+                        Instantiate(cratePrefab, transform.position + new Vector3(0, (i * 0.5f) - 0.75f , 0), Quaternion.identity);
+                }
             }
             
             SoundManager.PlaySound("Rover Destroyed");
