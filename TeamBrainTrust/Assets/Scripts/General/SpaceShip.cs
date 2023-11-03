@@ -2,6 +2,7 @@
 using System.Collections;
 using Quest;
 using Systems.General;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,9 +13,11 @@ namespace General
     {
         public ParticleSystem takeOffEffect;
         private bool takeOff;
-        private float speed = 1;
+        private float speed = 50;
+        private float acceleration = 350;
         public Image blackScreen;
         private float alpha = 0;
+
         private void Start()
         {
             QuestManager.i.OnSpaceShipRepaired.AddListener(OnSpaceShipRepaired);
@@ -25,9 +28,11 @@ namespace General
             if (takeOff)
             {
                 // transform.Translate(new Vector3(0, speed * Time.deltaTime));
-                speed += Time.deltaTime;
+                speed += acceleration * Time.deltaTime;
                 alpha += 0.12f * Time.deltaTime;
                 blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, alpha);
+
+                SoundManager.SetVolume("Spaceship Takeoff", 1 - alpha);
             }
         }
 
@@ -36,7 +41,7 @@ namespace General
             if (takeOff)
             {
                 // transform.Translate(new Vector3(0, speed * Time.deltaTime));
-                GetComponent<Rigidbody2D>().velocity = new Vector3(0, 50 * speed * Time.deltaTime);
+                GetComponent<Rigidbody2D>().velocity = new Vector3(0, speed);
                 // alpha += 0.1f * Time.deltaTime;
                 blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, alpha);
             }
@@ -53,7 +58,9 @@ namespace General
         {
             StartCoroutine("TakeOff");
             player.gameObject.SetActive(false);
-            FindFirstObjectByType<CameraFollower>().SetTarget(gameObject, 8);
+            FindFirstObjectByType<CameraFollower>().SetTarget(gameObject, 15);
+            PlayerHUD.i.gameObject.SetActive(false);
+            ObjectiveHUD.i.gameObject.SetActive(false);
         }
 
 
