@@ -95,5 +95,13 @@ namespace Systems.General
             sound.source.Stop();
         }
 
+        public static void SetVolume(string soundName, float volume)
+        {
+            Sound sound = i.GetSound(soundName);
+            if(sound == null)
+                return;
+            sound.source.volume = volume;
+        }
+
     }
 }
