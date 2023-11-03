@@ -7,7 +7,7 @@ namespace Systems.General
     public class SoundManager : MonoBehaviour
     {
     
-        public static float soundVolume = 1f;
+        public static float soundVolume = 0.75f;
         static SoundManager i;
         public Sound[] sounds;
 
