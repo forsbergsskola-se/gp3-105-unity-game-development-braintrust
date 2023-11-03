@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8504962371573290701}
   - component: {fileID: 3207903801185534011}
-  - component: {fileID: 330880360137911630}
+  - component: {fileID: 1657770382580070767}
   m_Layer: 0
   m_Name: Rover Destroyed
   m_TagString: Untagged
@@ -87,51 +87,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &330880360137911630
-BoxCollider2D:
+--- !u!114 &1657770382580070767
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6645381253114887106}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.025}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.55}
-  m_EdgeRadius: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d410cee3014b138ecc884f24677191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireEffect: {fileID: 6434113734106493502}
 --- !u!1001 &3944381396237126534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -186,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068147747963713976, guid: a4c9e2ee76088854290088d6e3fbcbe6, type: 3}
       propertyPath: looping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8068147747963713976, guid: a4c9e2ee76088854290088d6e3fbcbe6, type: 3}
       propertyPath: lengthInSec
@@ -204,6 +172,11 @@ PrefabInstance:
 --- !u!4 &3553611850387946302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 571313788698128568, guid: a4c9e2ee76088854290088d6e3fbcbe6, type: 3}
+  m_PrefabInstance: {fileID: 3944381396237126534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6434113734106493502 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8068147747963713976, guid: a4c9e2ee76088854290088d6e3fbcbe6, type: 3}
   m_PrefabInstance: {fileID: 3944381396237126534}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6798241245987025606
@@ -264,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8118789597340615743, guid: a061702cc57d075468cce9f16c2ee663, type: 3}
       propertyPath: lengthInSec
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8118789597340615743, guid: a061702cc57d075468cce9f16c2ee663, type: 3}
       propertyPath: playOnAwake

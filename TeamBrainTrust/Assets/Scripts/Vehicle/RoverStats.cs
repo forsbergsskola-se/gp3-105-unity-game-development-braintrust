@@ -58,6 +58,7 @@ namespace Vehicle
                     Instantiate(cratePrefab, transform.position + new Vector3(0, (i * 0.5f) - 0.75f , 0), Quaternion.identity);
             }
             
+            SoundManager.PlaySound("Rover Destroyed");
             
             Destroy(gameObject);
         }
@@ -80,6 +81,7 @@ namespace Vehicle
             if (healthPercentage <= 0.20f)
             {
                 fire.Play();
+                SoundManager.PlaySound("Rover Fire");
             }
         }
     }

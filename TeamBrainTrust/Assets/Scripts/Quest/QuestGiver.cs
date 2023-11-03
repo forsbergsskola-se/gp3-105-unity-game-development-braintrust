@@ -20,6 +20,7 @@ namespace Quest
         private void Interact(GameObject player)
         {
             QuestManager manager = GetComponent<QuestManager>();
+            SoundManager.PlaySound("Beep Boop  ");
             
             if (manager.questActive)
             {

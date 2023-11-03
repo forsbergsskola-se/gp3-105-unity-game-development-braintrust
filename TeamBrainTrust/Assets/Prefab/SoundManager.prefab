@@ -61,9 +61,19 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - soundName: Rover Impact
-    audioClip: {fileID: 8300000, guid: 76dbd5738194a144a8d268f81805941c, type: 3}
+    audioClip: {fileID: 8300000, guid: ac4dad72c357c5d4daa194b85deefdb6, type: 3}
     volume: 1
     loop: 0
+    source: {fileID: 0}
+  - soundName: Rover Destroyed
+    audioClip: {fileID: 8300000, guid: db65eb75a89e0f64b9505e0f0365dcb7, type: 3}
+    volume: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Rover Fire
+    audioClip: {fileID: 8300000, guid: 173aa253bd04b934f9d0872c0a15330a, type: 3}
+    volume: 1
+    loop: 1
     source: {fileID: 0}
   - soundName: Rover Door
     audioClip: {fileID: 8300000, guid: 09da6297980428c4599e9ba56aae965f, type: 3}
@@ -86,8 +96,8 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - soundName: Beep Boop
-    audioClip: {fileID: 8300000, guid: 88fb60efcfd9f404c9a8cbf44d864a16, type: 3}
-    volume: 1
+    audioClip: {fileID: 8300000, guid: 7f0f3f28c8701484c95580dd3ae1d992, type: 3}
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - soundName: Tower Shoot
