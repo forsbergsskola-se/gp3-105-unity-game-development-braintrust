@@ -64,6 +64,9 @@ namespace Player
             base.Death();
             creditCount /= 2;
             PlayerPrefs.SetInt("Credits", creditCount);
+            PlayerHUD.i.gameObject.SetActive(false);
+            ObjectiveHUD.i.gameObject.SetActive(false);
+            
             Destroy(gameObject);
         }
     }
