@@ -4,6 +4,7 @@ using Quest;
 using Systems.General;
 using UI;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,6 +12,8 @@ namespace General
 {
     public class SpaceShip : MonoBehaviour
     {
+
+        [System.NonSerialized] public UnityEvent OnTakeOff = new UnityEvent();
         public ParticleSystem takeOffEffect;
         private bool takeOff;
         private float speed = 50;
@@ -57,6 +60,7 @@ namespace General
         private void OnInteract(GameObject player)
         {
             StartCoroutine("TakeOff");
+            
             player.gameObject.SetActive(false);
             FindFirstObjectByType<CameraFollower>().SetTarget(gameObject, 15);
             PlayerHUD.i.gameObject.SetActive(false);
@@ -66,6 +70,8 @@ namespace General
 
         private IEnumerator TakeOff()
         {
+            OnTakeOff.Invoke();
+            
             SoundManager.PlaySound("Spaceship Takeoff");
             takeOffEffect.Play();
             GetComponent<EdgeCollider2D>().enabled = false;
